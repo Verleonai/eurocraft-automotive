@@ -310,9 +310,11 @@ ul { list-style: none; }
   height: 42px;
   width: auto;
   display: block;
-  transition: opacity 0.3s var(--ease);
+  transition: opacity 0.3s var(--ease), filter 0.35s var(--ease);
+  /* Light mode: darken the silver logo so it reads on ivory nav */
+  filter: brightness(0.15) contrast(1.2);
 }
-.brand-logo:hover { opacity: 0.82; }
+.brand-logo:hover { opacity: 0.8; }
 
 .nav-links {
   display: flex;
@@ -2062,7 +2064,8 @@ img[loading="lazy"].loaded { opacity: 1; }
 [data-theme="dark"] .nav.scrolled { background: rgba(6,6,6,0.85); border-bottom-color: rgba(255,255,255,0.06); box-shadow: none; }
 [data-theme="dark"] .nav-links a { color: var(--ink); }
 [data-theme="dark"] .nav-links a:hover { color: var(--red-bright); }
-[data-theme="dark"] .brand-logo { filter: brightness(0) invert(1); }
+/* Dark mode: brighten the silver logo so it pops on near-black nav */
+[data-theme="dark"] .brand-logo { filter: brightness(3.5) contrast(0.9) saturate(0.7); }
 
 /* Marquee section — in dark theme keep it dark, slightly lighter */
 [data-theme="dark"] .marquee-section { background: #111114; border-color: rgba(255,255,255,0.06); }
@@ -2453,3 +2456,7 @@ html {
 [data-theme="dark"] .cta-content .eyebrow { color: rgba(138,138,150,1); }
 [data-theme="dark"] .cta-content h2 { color: #f7f7f8; }
 [data-theme="dark"] .cta-content p { color: rgba(232,232,234,0.85); }
+
+/* Footer logo — always on dark bg, needs to be bright */
+.footer .brand-logo { filter: brightness(3.5) contrast(0.9) saturate(0.7); }
+[data-theme="light"] .footer .brand-logo { filter: brightness(3.5) contrast(0.9) saturate(0.7); }
