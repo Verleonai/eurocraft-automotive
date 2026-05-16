@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f5f1">
+<title>Services — EuroCraft Automotive · Orlando European Auto Repair</title>
+<meta name="description" content="Scheduled maintenance, dealer-level diagnostics, engine repair, programming/coding, and performance tuning for European vehicles in Orlando, FL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="canonical" href="https://www.eurocraftautomotive.com/services.html">
+<link rel="stylesheet" href="css/style.css?v=1778956800">
+<style>
+  .svc-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding-block: 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    align-items: center;
+  }
+  .svc-detail:nth-child(even) .svc-detail-media { order: 2; }
+  .svc-detail-media {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+  .svc-detail-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+  .svc-detail-media:hover img { transform: scale(1.05); }
+  .svc-detail-tag {
+    position: absolute; top: 1.4rem; left: 1.4rem;
+    padding: 0.5rem 0.9rem;
+    background: var(--red);
+    font-family: var(--font-mono);
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    color: var(--ice);
+  }
+  .svc-num {
+    font-family: var(--font-display);
+    font-size: 6rem;
+    line-height: 0.85;
+    color: var(--red);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .svc-detail h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  .svc-detail ul.feature-list {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .svc-detail ul.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .svc-detail ul.feature-list li::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--red);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  @media (max-width: 900px) {
+    .svc-detail { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; }
+    .svc-detail:nth-child(even) .svc-detail-media { order: 0; }
+    .svc-num { font-size: 4rem; }
+  }
+</style>
+
+  <meta property="og:title" content="Services — EuroCraft Automotive Orlando">
+  <meta property="og:description" content="Eight core disciplines: maintenance, diagnostics, engine repair, brakes, suspension, alignment, programming & coding, and ECU performance tuning.">
+  <meta property="og:url" content="https://www.eurocraftautomotive.com/services.html">
+  <meta name="twitter:title" content="Services — EuroCraft Automotive Orlando">
+  <meta name="twitter:description" content="Eight core disciplines: maintenance, diagnostics, engine repair, brakes, suspension, alignment, programming & coding, and ECU performance tuning.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EuroCraft Automotive">
+  <meta property="og:image" content="https://eurocraftautomotive.com/assets/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://eurocraftautomotive.com/assets/og-image.png">
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "EuroCraft Automotive",
+    "description": "Dealer-level diagnostics, programming, and performance for Porsche, BMW, Mercedes-Benz, Audi, and Volkswagen in Orlando, FL.",
+    "url": "https://www.eurocraftautomotive.com",
+    "telephone": "+14075125877",
+    "email": "service@eurocraftautomotive.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9751 Delegates Drive, Suite 200",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32837",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.4214,
+      "longitude": -81.3977
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card",
+    "areaServed": "Orlando, FL",
+    "knowsAbout": ["Porsche","BMW","Mercedes-Benz","Audi","Volkswagen","European auto repair","ECU tuning","diagnostics","programming"]
+  }
+  </script>
+</head>
+<body>
+
+<div class="loader"><div class="loader-inner"><div class="loader-text">EUROCRAFT</div><div class="loader-bar"></div></div></div>
+<div class="cursor"></div>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="EuroCraft Automotive">
+    <img src="assets/logo.svg" alt="EuroCraft Automotive" class="brand-logo" width="220" height="49" loading="eager">
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a class="active" href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a class="nav-cta" href="https://book.eurocraftautomotive.com/" data-magnetic><span>Book Service →</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+</header>
+<div class="mobile-menu" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
+    <li><a href="https://book.eurocraftautomotive.com/" style="color: var(--red);">Book →</a></li>
+  </ul>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="images/ecu-tuning.jpg" alt=""></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Services</span></div>
+    <div class="eyebrow mb-2">Our Capabilities</div>
+    <h1 class="display-1">Precision work,<br>without the dealership.</h1>
+    <p class="page-hero-sub">Eight core disciplines performed with factory-level diagnostic systems, OEM-spec parts, and the discipline your European vehicle was engineered for.</p>
+  </div>
+</section>
+
+<section class="section tex-grid">
+  <div class="container">
+    <div class="section-head row">
+      <div class="reveal">
+        <div class="eyebrow mb-2">Eight Core Disciplines</div>
+        <h2 class="display-2">Every system. Every model.</h2>
+      </div>
+      <p class="lead reveal">
+        From routine factory maintenance to deep ECU calibration — these are the eight disciplines we perform every week, on every European platform we service.
+      </p>
+    </div>
+
+    <!-- 01 MAINTENANCE -->
+    <article id="maintenance" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/shop-7.jpg" alt="Scheduled maintenance">
+        <span class="svc-detail-tag">01 · Maintenance</span>
+      </div>
+      <div>
+        <span class="svc-num">01</span>
+        <h2>Scheduled Maintenance</h2>
+        <p style="color: var(--graphite);">
+          Factory-scheduled service using OEM or equivalent-quality parts, performed to manufacturer
+          specifications. Done correctly, scheduled service at EuroCraft <strong style="color: var(--jet);">does not affect your factory warranty</strong> —
+          and it costs far less than the dealer.
+        </p>
+        <ul class="feature-list">
+          <li>OEM or equivalent-spec parts and fluids</li>
+          <li>Manufacturer service interval reset</li>
+          <li>Multi-point inspection on every visit</li>
+          <li>Digital service record kept on file</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 02 DIAGNOSTICS -->
+    <article id="diagnostics" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/ecu-tuning.jpg" alt="Diagnostics">
+        <span class="svc-detail-tag">02 · Diagnostics</span>
+      </div>
+      <div>
+        <span class="svc-num">02</span>
+        <h2>Advanced Diagnostics</h2>
+        <p style="color: var(--graphite);">
+          Manufacturer-level scan tools and pinpoint diagnostic systems for accurate fault isolation.
+          We don't throw parts at problems — we identify the root cause and quote it transparently.
+        </p>
+        <ul class="feature-list">
+          <li>Diesel engine service and aftertreatment</li>
+          <li>DEF / AdBlue system diagnostics</li>
+          <li>Emissions, EVAP, and fuel system work</li>
+          <li>Mercedes Sprinter & commercial vehicles</li>
+          <li>Full network scan: engine, trans, body, chassis</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 03 ENGINE -->
+    <article id="engine" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/shop-2.jpg" alt="Engine repair">
+        <span class="svc-detail-tag">03 · Engine</span>
+      </div>
+      <div>
+        <span class="svc-num">03</span>
+        <h2>Engine Repair</h2>
+        <p style="color: var(--graphite);">
+          From minor issues to complete rebuilds — focused on reliability, performance,
+          and long-term durability. We service forced-induction platforms, V8s, V10s, and inline-sixes from every major European OEM.
+        </p>
+        <ul class="feature-list">
+          <li>Timing chain, guide, and tensioner service</li>
+          <li>Head gasket, valve cover, and oil leak repair</li>
+          <li>Turbocharger and supercharger work</li>
+          <li>Cooling system and water pump overhauls</li>
+          <li>Engine assembly and partial rebuilds</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 04 BRAKES -->
+    <article id="brakes" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/brakes.jpg" alt="Brake systems">
+        <span class="svc-detail-tag">04 · Brakes</span>
+      </div>
+      <div>
+        <span class="svc-num">04</span>
+        <h2>Brake Systems</h2>
+        <p style="color: var(--graphite);">
+          Complete brake service — pads, rotors, fluid flushes, calipers, and brake-by-wire diagnostics.
+          We work on OEM, ceramic, and performance big-brake-kit setups for street and track.
+        </p>
+        <ul class="feature-list">
+          <li>OEM and performance pad & rotor packages</li>
+          <li>Full brake fluid flush and bleed</li>
+          <li>Caliper rebuild and replacement</li>
+          <li>Big brake kit (BBK) installation</li>
+          <li>PCCB / carbon-ceramic system service</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 05 SUSPENSION -->
+    <article id="suspension" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/suspension.jpg" alt="Suspension">
+        <span class="svc-detail-tag">05 · Suspension</span>
+      </div>
+      <div>
+        <span class="svc-num">05</span>
+        <h2>Suspension</h2>
+        <p style="color: var(--graphite);">
+          Full inspection and service of every suspension component. Whether you want to restore
+          factory ride quality or sharpen the handling on a performance build, we'll get the geometry right.
+        </p>
+        <ul class="feature-list">
+          <li>Air suspension diagnosis and rebuild</li>
+          <li>Coilover and lift installation</li>
+          <li>Control arm, bushing, and link replacement</li>
+          <li>Shock and strut service</li>
+          <li>Performance ride-height calibration</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- MID-PAGE DARK BAND -->
+<section class="stats-band" style="padding-block: clamp(4rem,7vw,6rem);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2rem;text-align:center;">
+      <div class="stat">
+        <span class="num" style="justify-content:center;"><span data-counter="8">8</span></span>
+        <span class="label">Core Disciplines</span>
+      </div>
+      <div class="stat">
+        <span class="num" style="justify-content:center;">5</span>
+        <span class="label">European Brands</span>
+      </div>
+      <div class="stat">
+        <span class="num" style="justify-content:center;">ISTA</span>
+        <span class="label">BMW / Mini OEM Tool</span>
+      </div>
+      <div class="stat">
+        <span class="num" style="justify-content:center;">ODIS</span>
+        <span class="label">VAG OEM Tool</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tex-grid">
+  <div class="container">
+
+    <!-- 06 ALIGNMENT -->
+    <article id="alignment" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/shop-4.jpg" alt="Wheel alignment">
+        <span class="svc-detail-tag">06 · Alignment</span>
+      </div>
+      <div>
+        <span class="svc-num">06</span>
+        <h2>Wheel Alignment</h2>
+        <p style="color: var(--graphite);">
+          Precision alignment for proper handling, tire life, and stability — including advanced setups
+          for lowered cars, performance builds, and specialty vehicles where standard rack specs don't apply.
+        </p>
+        <ul class="feature-list">
+          <li>OEM-spec four-wheel alignment</li>
+          <li>Performance camber and toe setups</li>
+          <li>Track-spec alignments with corner balancing</li>
+          <li>Steering angle sensor calibration</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 07 PROGRAMMING -->
+    <article id="programming" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/shop-6.jpg" alt="Programming and coding">
+        <span class="svc-detail-tag">07 · Programming</span>
+      </div>
+      <div>
+        <span class="svc-num">07</span>
+        <h2>Programming & Coding</h2>
+        <p style="color: var(--graphite);">
+          Software updates, control module programming, and system coding using factory-level systems
+          (ISTA, ODIS, XENTRY, PIWIS) — work most independents simply can't perform.
+        </p>
+        <ul class="feature-list">
+          <li>Feature coding (lighting, comfort, retrofits)</li>
+          <li>Control module replacement and adaptation</li>
+          <li>Software updates and recall completion</li>
+          <li>Module-level repair and reprogramming</li>
+          <li>Vehicle order and PIA / FA coding</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 08 TUNING -->
+    <article id="tuning" class="svc-detail reveal">
+      <div class="svc-detail-media">
+        <img src="images/gauge.jpg" alt="Performance tuning">
+        <span class="svc-detail-tag">08 · Performance</span>
+      </div>
+      <div>
+        <span class="svc-num">08</span>
+        <h2>Performance / Tuning</h2>
+        <p style="color: var(--graphite);">
+          ECU and TCU calibration designed for safe, reliable power gains — paired with the supporting
+          hardware your platform actually needs to live with it long-term.
+        </p>
+        <ul class="feature-list">
+          <li>Stage 1 / 2 / 3 ECU calibration</li>
+          <li>DCT / DSG / PDK transmission tuning</li>
+          <li>Custom tuning for built engines</li>
+          <li>Logging, dyno verification, and refinement</li>
+          <li>Supporting hardware (intake, exhaust, hardware)</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"><img src="images/cta-bg.jpg" alt=""></div>
+  <div class="container cta-content reveal">
+    <div class="eyebrow">Not Sure What You Need?</div>
+    <h2 class="display-1">Start with a <span class="red">diagnostic.</span></h2>
+    <p class="lead text-center">
+      Book a full diagnostic and we'll tell you exactly what your car needs — no upsells, no fluff.
+    </p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://book.eurocraftautomotive.com/" data-magnetic><span>Book Diagnostic <span class="arrow">→</span></span></a>
+      <a class="btn btn-ghost" href="contact.html" data-magnetic><span>Ask a Question</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="EuroCraft Automotive">
+    <img src="assets/logo.svg" alt="EuroCraft Automotive" class="brand-logo" width="220" height="49" loading="eager">
+  </a>
+      <p>European auto repair and performance, built around precision, transparency, and dealership-level capability — without dealership limits.</p>
+      <div class="socials" style="margin-top: 1.4rem;">
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19a2.51 2.51 0 0 0-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42a2.51 2.51 0 0 0-1.77 1.77A26.07 26.07 0 0 0 2 12a26.07 26.07 0 0 0 .42 4.81 2.51 2.51 0 0 0 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42a2.51 2.51 0 0 0 1.77-1.77A26.07 26.07 0 0 0 22 12a26.07 26.07 0 0 0-.42-4.81zM10 15V9l5.2 3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#maintenance">Maintenance</a></li><li><a href="services.html#diagnostics">Diagnostics</a></li><li><a href="services.html#programming">Programming</a></li><li><a href="services.html#tuning">Performance</a></li></ul></div>
+    <div class="footer-col"><h4>Visit</h4><ul><li>9751 Delegates Drive, Suite 200<br>Orlando, FL 32837</li><li><a href="tel:+14075125877">(407) 512-5877</a></li><li><a href="mailto:service@eurocraftautomotive.com">service@eurocraftautomotive.com</a></li><li>Mon–Fri · 9AM – 6PM</li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 EuroCraft Automotive. All rights reserved.</span>
+    <span>Crafted with precision in Orlando, FL.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

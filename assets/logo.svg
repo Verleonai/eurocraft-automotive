@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none">
+  <!-- EC Monogram mark -->
+  <g>
+    <!-- Outer square frame -->
+    <rect x="2" y="2" width="54" height="54" stroke="#c41818" stroke-width="1.8" fill="none"/>
+    <!-- Inner inset frame -->
+    <rect x="7" y="7" width="44" height="44" stroke="#c41818" stroke-width="0.7" stroke-dasharray="4 2" fill="none"/>
+    <!-- E letter -->
+    <line x1="16" y1="20" x2="16" y2="38" stroke="#c41818" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="16" y1="20" x2="28" y2="20" stroke="#c41818" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="16" y1="29" x2="25" y2="29" stroke="#c41818" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="16" y1="38" x2="28" y2="38" stroke="#c41818" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- C letter -->
+    <path d="M 38 21 A 9 9 0 1 0 38 37" stroke="#c41818" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Wordmark -->
+  <g font-family="'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif">
+    <text x="72" y="42" font-size="38" letter-spacing="4" fill="#0b0b0d">EUROCRAFT</text>
+    <!-- Thin rule -->
+    <rect x="72" y="48" width="220" height="1.2" fill="#c41818"/>
+    <!-- Subtext -->
+    <text x="73" y="62" font-size="10" letter-spacing="7" fill="#3a3a42" font-family="'JetBrains Mono','IBM Plex Mono',monospace">AUTOMOTIVE</text>
+  </g>
+</svg>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f5f1">
+<title>Gallery — EuroCraft Automotive · Inside the Workshop</title>
+<meta name="description" content="A look inside our Orlando workshop — diagnostic work, programming, performance, and the European vehicles we service daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="canonical" href="https://www.eurocraftautomotive.com/gallery.html">
+<link rel="stylesheet" href="css/style.css?v=1778956800">
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
+  .filter-bar button {
+    padding: 0.7rem 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--graphite);
+    background: var(--paper);
+    border: 1px solid rgba(11,11,13,0.12);
+    border-radius: 999px;
+    transition: all 0.3s var(--ease);
+    box-shadow: var(--shadow-sm);
+  }
+  .filter-bar button:hover { color: var(--jet); border-color: rgba(11,11,13,0.3); }
+  .filter-bar button.active { background: var(--red); border-color: var(--red); color: var(--ice); }
+
+  .lightbox {
+    position: fixed; inset: 0;
+    background: rgba(11,11,13,0.86);
+    display: none;
+    place-items: center;
+    z-index: 9999;
+    padding: 4rem;
+    backdrop-filter: blur(20px);
+  }
+  .lightbox.open { display: grid; }
+  .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 12px; }
+  .lightbox-close {
+    position: absolute;
+    top: 2rem; right: 2rem;
+    width: 50px; height: 50px;
+    background: var(--red);
+    color: var(--ice);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 50px; height: 50px;
+    background: rgba(255,255,255,0.12);
+    color: var(--ice);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .lightbox-nav:hover { background: var(--red); }
+  .lightbox-nav.prev { left: 2rem; }
+  .lightbox-nav.next { right: 2rem; }
+</style>
+
+  <meta property="og:title" content="Gallery — EuroCraft Automotive Workshop">
+  <meta property="og:description" content="Inside the shop — real diagnostic work, programming, performance builds, and European vehicles we service every week.">
+  <meta property="og:url" content="https://www.eurocraftautomotive.com/gallery.html">
+  <meta name="twitter:title" content="Gallery — EuroCraft Automotive Workshop">
+  <meta name="twitter:description" content="Inside the shop — real diagnostic work, programming, performance builds, and European vehicles we service every week.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EuroCraft Automotive">
+  <meta property="og:image" content="https://eurocraftautomotive.com/assets/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://eurocraftautomotive.com/assets/og-image.png">
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "EuroCraft Automotive",
+    "description": "Dealer-level diagnostics, programming, and performance for Porsche, BMW, Mercedes-Benz, Audi, and Volkswagen in Orlando, FL.",
+    "url": "https://www.eurocraftautomotive.com",
+    "telephone": "+14075125877",
+    "email": "service@eurocraftautomotive.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9751 Delegates Drive, Suite 200",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32837",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.4214,
+      "longitude": -81.3977
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card",
+    "areaServed": "Orlando, FL",
+    "knowsAbout": ["Porsche","BMW","Mercedes-Benz","Audi","Volkswagen","European auto repair","ECU tuning","diagnostics","programming"]
+  }
+  </script>
+</head>
+<body>
+
+<div class="loader"><div class="loader-inner"><div class="loader-text">EUROCRAFT</div><div class="loader-bar"></div></div></div>
+<div class="cursor"></div>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="EuroCraft Automotive">
+    <img src="assets/logo.svg" alt="EuroCraft Automotive" class="brand-logo" width="220" height="49" loading="eager">
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+    <a class="active" href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+  </nav>
+  <a class="nav-cta" href="https://book.eurocraftautomotive.com/" data-magnetic><span>Book Service →</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+</header>
+<div class="mobile-menu" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
+    <li><a href="https://book.eurocraftautomotive.com/" style="color: var(--red);">Book →</a></li>
+  </ul>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="images/shop-6.jpg" alt=""></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Gallery</span></div>
+    <div class="eyebrow mb-2">Inside The Shop</div>
+    <h1 class="display-1">Real work.<br>Real vehicles.</h1>
+    <p class="page-hero-sub">A look behind the lifts — diagnostic sessions, programming jobs, performance builds, and the European cars we service every week.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="diagnostics">Diagnostics</button>
+      <button data-filter="performance">Performance</button>
+      <button data-filter="workshop">Workshop</button>
+      <button data-filter="vehicles">Vehicles</button>
+    </div>
+
+    <div class="gallery-grid reveal" id="gallery">
+      <div class="gallery-item tall" data-cat="workshop"><img src="images/shop-1.jpg" alt=""></div>
+      <div class="gallery-item wide" data-cat="performance"><img src="images/ecu-tuning.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="workshop"><img src="images/shop-2.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="diagnostics"><img src="images/shop-3.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="workshop"><img src="images/shop-4.jpg" alt=""></div>
+      <div class="gallery-item wide-2" data-cat="workshop"><img src="images/shop-5.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="performance"><img src="images/shop-6.jpg" alt=""></div>
+      <div class="gallery-item wide" data-cat="vehicles"><img src="images/porsche.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="vehicles"><img src="images/bmw.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="vehicles"><img src="images/mercedes.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="vehicles"><img src="images/audi.jpg" alt=""></div>
+      <div class="gallery-item wide-2" data-cat="performance"><img src="images/gauge.jpg" alt=""></div>
+      <div class="gallery-item square" data-cat="performance"><img src="images/brakes.jpg" alt=""></div>
+      <div class="gallery-item std" data-cat="workshop"><img src="images/shop-7.jpg" alt=""></div>
+      <div class="gallery-item std" data-cat="workshop"><img src="images/shop-8.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lb-close">×</button>
+  <button class="lightbox-nav prev" id="lb-prev">‹</button>
+  <button class="lightbox-nav next" id="lb-next">›</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"><img src="images/cta-bg.jpg" alt=""></div>
+  <div class="container cta-content reveal">
+    <div class="eyebrow">Yours Could Be Next</div>
+    <h2 class="display-1">Bring it in.</h2>
+    <p class="lead text-center">Schedule a service appointment and see the work firsthand.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://book.eurocraftautomotive.com/" data-magnetic><span>Book Service <span class="arrow">→</span></span></a>
+      <a class="btn btn-ghost" href="contact.html" data-magnetic><span>Contact Us</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="EuroCraft Automotive">
+    <img src="assets/logo.svg" alt="EuroCraft Automotive" class="brand-logo" width="220" height="49" loading="eager">
+  </a>
+      <p>European auto repair and performance, built around precision, transparency, and dealership-level capability — without dealership limits.</p>
+      <div class="socials" style="margin-top: 1.4rem;">
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19a2.51 2.51 0 0 0-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42a2.51 2.51 0 0 0-1.77 1.77A26.07 26.07 0 0 0 2 12a26.07 26.07 0 0 0 .42 4.81 2.51 2.51 0 0 0 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42a2.51 2.51 0 0 0 1.77-1.77A26.07 26.07 0 0 0 22 12a26.07 26.07 0 0 0-.42-4.81zM10 15V9l5.2 3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#maintenance">Maintenance</a></li><li><a href="services.html#diagnostics">Diagnostics</a></li><li><a href="services.html#programming">Programming</a></li><li><a href="services.html#tuning">Performance</a></li></ul></div>
+    <div class="footer-col"><h4>Visit</h4><ul><li>9751 Delegates Drive, Suite 200<br>Orlando, FL 32837</li><li><a href="tel:+14075125877">(407) 512-5877</a></li><li><a href="mailto:service@eurocraftautomotive.com">service@eurocraftautomotive.com</a></li><li>Mon–Fri · 9AM – 6PM</li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 EuroCraft Automotive. All rights reserved.</span>
+    <span>Crafted with precision in Orlando, FL.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Filter
+  document.querySelectorAll('.filter-bar button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.filter-bar button').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const f = b.dataset.filter;
+      document.querySelectorAll('#gallery .gallery-item').forEach(item => {
+        if (f === 'all' || item.dataset.cat === f) {
+          item.style.display = '';
+          setTimeout(() => item.style.opacity = '1', 10);
+        } else {
+          item.style.opacity = '0';
+          setTimeout(() => item.style.display = 'none', 250);
+        }
+      });
+    });
+  });
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const items = Array.from(document.querySelectorAll('#gallery .gallery-item img'));
+  let lbIdx = 0;
+  items.forEach((img, i) => img.parentElement.addEventListener('click', () => {
+    lbIdx = i;
+    lbImg.src = img.src;
+    lb.classList.add('open');
+  }));
+  document.getElementById('lb-close').onclick = () => lb.classList.remove('open');
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+  document.getElementById('lb-prev').onclick = () => { lbIdx = (lbIdx - 1 + items.length) % items.length; lbImg.src = items[lbIdx].src; };
+  document.getElementById('lb-next').onclick = () => { lbIdx = (lbIdx + 1) % items.length; lbImg.src = items[lbIdx].src; };
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lb.classList.remove('open');
+    if (e.key === 'ArrowLeft') document.getElementById('lb-prev').click();
+    if (e.key === 'ArrowRight') document.getElementById('lb-next').click();
+  });
+</script>
+</body>
+</html>

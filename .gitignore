@@ -1,0 +1,5 @@
+node_modules/
+_shots/
+scripts/
+*.old.*
+.DS_Store
