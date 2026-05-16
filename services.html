@@ -6,13 +6,20 @@
 <meta name="theme-color" content="#f7f5f1">
 <title>Services — EuroCraft Automotive · Orlando European Auto Repair</title>
 <meta name="description" content="Scheduled maintenance, dealer-level diagnostics, engine repair, programming/coding, and performance tuning for European vehicles in Orlando, FL.">
+  <!-- Theme: set before paint to prevent flash -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('ec_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="preload" as="image" href="images/webp/ecu-tuning.webp" type="image/webp">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="canonical" href="https://www.eurocraftautomotive.com/services.html">
-<link rel="stylesheet" href="css/style.css?v=1778959256">
+<link rel="stylesheet" href="css/style.css?v=1778959546">
 <style>
   .svc-detail {
     display: grid;
@@ -159,6 +166,16 @@
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <div class="theme-toggle" id="theme-toggle" role="group" aria-label="Color theme">
+    <button class="theme-toggle-btn" id="btn-dark" aria-pressed="true">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      Dark
+    </button>
+    <button class="theme-toggle-btn" id="btn-light" aria-pressed="false">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      Light
+    </button>
+  </div>
   <a class="nav-cta" href="https://book.eurocraftautomotive.com/" data-magnetic><span>Book Service →</span></a>
   <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
 </header>
@@ -166,6 +183,18 @@
   <ul>
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
     <li><a href="https://book.eurocraftautomotive.com/" style="color: var(--red);">Book →</a></li>
+    <li class="mobile-theme-toggle">
+      <div class="theme-toggle" id="theme-toggle-mobile" role="group" aria-label="Color theme">
+        <button class="theme-toggle-btn" id="btn-dark-m" aria-pressed="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          Dark
+        </button>
+        <button class="theme-toggle-btn" id="btn-light-m" aria-pressed="false">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Light
+        </button>
+      </div>
+    </li>
   </ul>
 </div>
 

@@ -1,4 +1,43 @@
-/* EuroCraft Automotive — App Layer (cookie, a11y, perf) */
+/* EuroCraft Automotive — App Layer (theme, cookie, a11y, perf) */
+
+/* ---------- THEME SWITCHER — dark default ---------- */
+(function() {
+  const root = document.documentElement;
+  const STORAGE_KEY = 'ec_theme';
+
+  // Determine starting theme: stored pref → default dark
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const theme = saved || 'dark';
+  root.setAttribute('data-theme', theme);
+
+  // Sync all toggle buttons on the page
+  function syncButtons(active) {
+    document.querySelectorAll('#btn-dark, #btn-dark-m').forEach(b => {
+      b.classList.toggle('active', active === 'dark');
+      b.setAttribute('aria-pressed', String(active === 'dark'));
+    });
+    document.querySelectorAll('#btn-light, #btn-light-m').forEach(b => {
+      b.classList.toggle('active', active === 'light');
+      b.setAttribute('aria-pressed', String(active === 'light'));
+    });
+  }
+
+  function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    localStorage.setItem(STORAGE_KEY, t);
+    syncButtons(t);
+  }
+
+  // Run sync after DOM ready
+  document.addEventListener('DOMContentLoaded', () => {
+    syncButtons(theme);
+    document.querySelectorAll('#btn-dark, #btn-dark-m').forEach(b =>
+      b.addEventListener('click', () => setTheme('dark')));
+    document.querySelectorAll('#btn-light, #btn-light-m').forEach(b =>
+      b.addEventListener('click', () => setTheme('light')));
+  });
+})();
+
 
 /* ---------- SKIP NAV ---------- */
 (function() {

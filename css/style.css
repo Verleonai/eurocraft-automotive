@@ -2025,3 +2025,287 @@ img[loading="lazy"].loaded { opacity: 1; }
   transition: opacity 0.2s;
 }
 .rating-badge-link:hover { opacity: 0.75; }
+
+/* ============================================================
+   DARK THEME OVERRIDE — [data-theme="dark"] on <html>
+   All CSS variables flip; components inherit automatically.
+   ============================================================ */
+[data-theme="dark"] {
+  /* Surface palette */
+  --ivory:    #060606;
+  --paper:    #0b0b0d;
+  --bone:     #141418;
+  --mist:     #1c1c22;
+  --silver:   #2a2a32;
+  --steel:    #8a8a96;
+  --graphite: #8a8a96;
+  --ink:      #e8e8ea;
+  --jet:      #f7f7f8;
+  --black:    #060606;
+
+  /* Red stays close; bump slightly brighter on dark */
+  --red:         #d11b1b;
+  --red-bright:  #ef2b2b;
+  --red-deep:    #8b0f0f;
+
+  /* Shadows flip to glow */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 36px rgba(0,0,0,0.6), 0 24px 64px rgba(0,0,0,0.5);
+}
+
+/* Dark-mode body baseline */
+[data-theme="dark"] body { background: var(--ivory); color: var(--ink); }
+
+/* Nav — always blur-frost; dark mode gets darker glass */
+[data-theme="dark"] .nav { background: rgba(6,6,6,0.72); backdrop-filter: blur(18px) saturate(1.4); }
+[data-theme="dark"] .nav.scrolled { background: rgba(6,6,6,0.85); border-bottom-color: rgba(255,255,255,0.06); box-shadow: none; }
+[data-theme="dark"] .nav-links a { color: var(--ink); }
+[data-theme="dark"] .nav-links a:hover { color: var(--red-bright); }
+[data-theme="dark"] .brand-logo { filter: brightness(0) invert(1); }
+
+/* Marquee section — in dark theme keep it dark, slightly lighter */
+[data-theme="dark"] .marquee-section { background: #111114; border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .marquee-section .marquee-item { color: var(--ink); }
+
+/* Service cards */
+[data-theme="dark"] .service-card { background: #0f0f12; border: 1px solid rgba(255,255,255,0.04); }
+[data-theme="dark"] .service-card:hover { background: #141418; }
+[data-theme="dark"] .service-card ul li { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.06); color: var(--ink); }
+
+/* Process section */
+[data-theme="dark"] .process-section { background: #0a0a0d; }
+[data-theme="dark"] .process-row { background: #111114; border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .process-row::before { background: #111114; }
+[data-theme="dark"] .process-row:hover { background: #161619; border-color: rgba(209,27,27,0.45); }
+
+/* Why section — already dark-on-dark, boost contrast */
+[data-theme="dark"] .why-section { background: #040406; }
+[data-theme="dark"] .why-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); }
+
+/* Gallery grid */
+[data-theme="dark"] .gallery-grid { background: #040406; border-color: rgba(255,255,255,0.04); }
+
+/* Stats band — already dark, deepen */
+[data-theme="dark"] .stats-band { background: #040406; }
+
+/* Testimonials */
+[data-theme="dark"] .testimonials-section { background: #080809; }
+[data-theme="dark"] .testimonial { background: #0f0f12; border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .testimonial blockquote { color: var(--ink); }
+[data-theme="dark"] .rating-badge { background: #111114; border-color: rgba(255,255,255,0.06); }
+
+/* Contact */
+[data-theme="dark"] .contact-section { background: #080809; }
+[data-theme="dark"] .contact-item { background: #0f0f12; border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .contact-item h4, [data-theme="dark"] .contact-item p, [data-theme="dark"] .contact-item a { color: var(--ink); }
+[data-theme="dark"] .form { background: #0f0f12; border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .field input, [data-theme="dark"] .field select, [data-theme="dark"] .field textarea {
+  background: #060606; border-color: rgba(255,255,255,0.08); color: var(--ink);
+}
+[data-theme="dark"] .field input:focus, [data-theme="dark"] .field select:focus, [data-theme="dark"] .field textarea:focus {
+  background: #0f0f12; border-color: var(--red); box-shadow: 0 0 0 4px rgba(209,27,27,0.15);
+}
+[data-theme="dark"] .field label { color: var(--ink); }
+
+/* Brand cards */
+[data-theme="dark"] .brand-card { background: #0f0f12; }
+[data-theme="dark"] .brand-card:hover { background: #141418; }
+[data-theme="dark"] .brand-card h3 { color: var(--ink); }
+[data-theme="dark"] .brand-card p { color: var(--ink); }
+[data-theme="dark"] .brand-card ul li { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.07); color: var(--ink); }
+
+/* Mobile menu */
+[data-theme="dark"] .mobile-menu { background: var(--ivory); }
+[data-theme="dark"] .mobile-menu a { color: var(--ink); }
+
+/* Back to top */
+[data-theme="dark"] #back-to-top { background: #1c1c22; }
+
+/* Map info panel stays dark regardless */
+
+/* ---------- THEME TOGGLE SWITCH ---------- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  background: rgba(11,11,13,0.08);
+  border: 1px solid rgba(11,11,13,0.12);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+[data-theme="dark"] .theme-toggle {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.10);
+}
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--graphite);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+  white-space: nowrap;
+  user-select: none;
+  border: 0;
+  cursor: pointer;
+}
+.theme-toggle-btn svg { flex-shrink: 0; transition: transform 0.5s var(--ease); }
+.theme-toggle-btn.active {
+  background: var(--jet);
+  color: var(--ivory);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+[data-theme="dark"] .theme-toggle-btn.active {
+  background: var(--ivory);
+  color: var(--jet);
+}
+[data-theme="dark"] .theme-toggle-btn:not(.active) { color: var(--steel); }
+
+@media (max-width: 980px) {
+  .theme-toggle { display: none; }
+  /* Mobile: show theme toggle inside mobile menu */
+  .mobile-theme-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+  }
+}
+@media (min-width: 981px) {
+  .mobile-theme-toggle { display: none; }
+}
+
+/* Smooth theme transition — all color changes animate */
+html {
+  transition:
+    background-color 0.35s var(--ease),
+    color 0.35s var(--ease);
+}
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  transition-timing-function: var(--ease);
+}
+/* But don't override intentional transitions on interactive elements */
+.btn, .service-card, .why-card, .process-row, .gallery-item img,
+.nav, .brand-logo, a, button, input, select, textarea {
+  transition: unset;
+}
+/* Re-apply their specific transitions */
+.btn { transition: transform 0.3s var(--ease), color 0.3s var(--ease), background-color 0.3s var(--ease); }
+.service-card { transition: background 0.5s var(--ease), transform 0.5s var(--ease); }
+.process-row { transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease), background-color 0.35s var(--ease); }
+.brand-logo { transition: opacity 0.3s var(--ease), filter 0.35s var(--ease); }
+.gallery-item img { transition: transform 1s var(--ease), filter 0.5s var(--ease); }
+.nav { transition: background 0.35s var(--ease), backdrop-filter 0.35s, padding 0.4s var(--ease), border-color 0.35s; }
+
+/* ============================================================
+   DARK THEME — Section-specific overrides for hardcoded rgba
+   ============================================================ */
+
+/* Nav glass */
+[data-theme="dark"] .nav {
+  background: rgba(6,6,6,0.6);
+}
+[data-theme="dark"] .nav.scrolled {
+  background: rgba(6,6,6,0.88);
+  border-bottom-color: rgba(255,255,255,0.06);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+
+/* Hero — flip light overlay to dark */
+[data-theme="dark"] .hero::before {
+  background:
+    radial-gradient(120% 80% at 50% 100%, rgba(6,6,6,0.96) 0%, rgba(6,6,6,0.6) 55%, rgba(6,6,6,0.25) 100%),
+    linear-gradient(180deg, rgba(6,6,6,0.65) 0%, rgba(6,6,6,0.4) 35%, rgba(6,6,6,0.65) 70%, #060606 100%);
+}
+[data-theme="dark"] .hero-bg img {
+  filter: brightness(0.6) saturate(0.8) contrast(1.05);
+}
+[data-theme="dark"] .hero-title { color: var(--ice, #f7f7f8); }
+[data-theme="dark"] .hero-sub { color: rgba(232,232,234,0.9); }
+[data-theme="dark"] .hero-meta-item { border-left-color: rgba(255,255,255,0.15); }
+[data-theme="dark"] .hero-meta-item .num { color: var(--ice, #f7f7f8); }
+[data-theme="dark"] .hero-meta-item .label { color: rgba(138,138,150,1); }
+[data-theme="dark"] .hero-marquee { color: rgba(138,138,150,1); }
+[data-theme="dark"] .scroll-cue { color: rgba(138,138,150,1); }
+
+/* Page hero (inner pages) */
+[data-theme="dark"] .page-hero {
+  background: var(--jet, #060606);
+}
+[data-theme="dark"] .page-hero::before {
+  background:
+    radial-gradient(60% 60% at 0% 100%, rgba(196,24,24,0.20) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(6,6,6,0.55) 0%, rgba(6,6,6,0.4) 50%, rgba(6,6,6,0.6) 78%, #060606 100%);
+}
+[data-theme="dark"] .page-hero-bg img { filter: brightness(0.5) saturate(0.8) contrast(1.05); }
+
+/* About section bg + texture */
+[data-theme="dark"] .about-section { background: #060606; }
+
+/* Services section */
+[data-theme="dark"] .services-section { background: linear-gradient(180deg, #060606 0%, #0a0a0d 100%); }
+
+/* Gallery section */
+[data-theme="dark"] .gallery-section { background: #040406; }
+
+/* Testimonials section */
+[data-theme="dark"] .testimonials-section { background: #080809; }
+
+/* Process section */
+[data-theme="dark"] .process-section { background: #0a0a0d; }
+
+/* CTA section stays dark regardless — boost photo contrast */
+[data-theme="dark"] .cta-section::before {
+  background: linear-gradient(180deg, #060606 0%, transparent 14%, transparent 86%, #060606 100%);
+}
+
+/* Why section — already dark, just deepen */
+[data-theme="dark"] .why-section { background: #030304; }
+
+/* Footer unchanged (always dark) */
+
+/* stats-band — always dark */
+
+/* Dividers */
+[data-theme="dark"] .divider { background: var(--red); }
+
+/* About img badge glow */
+[data-theme="dark"] .about-badge { box-shadow: 0 12px 32px rgba(209,27,27,0.3); }
+
+/* Section heading colors */
+[data-theme="dark"] .display-1,
+[data-theme="dark"] .display-2,
+[data-theme="dark"] .display-3 { color: var(--ice, #f7f7f8); }
+[data-theme="dark"] .eyebrow { color: rgba(138,138,150,1); }
+[data-theme="dark"] .lead { color: rgba(232,232,234,0.9); }
+[data-theme="dark"] p { color: rgba(232,232,234,0.85); }
+[data-theme="dark"] .process-title { color: var(--ice, #f7f7f8); }
+[data-theme="dark"] .process-desc { color: rgba(232,232,234,0.85); }
+[data-theme="dark"] .service-title { color: var(--ice, #f7f7f8); }
+[data-theme="dark"] .service-card p { color: rgba(138,138,150,1); }
+[data-theme="dark"] .service-num { color: rgba(138,138,150,0.8); }
+
+/* Footer-col links (already dark bg) */
+[data-theme="dark"] .footer-col a, [data-theme="dark"] .footer-col li { color: rgba(232,232,234,0.85); }
+
+/* Theme toggle — dark mode button states */
+[data-theme="dark"] .theme-toggle {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.10);
+}
+[data-theme="dark"] .theme-toggle-btn.active {
+  background: rgba(255,255,255,0.12);
+  color: #f7f7f8;
+}
+[data-theme="dark"] .theme-toggle-btn:not(.active) { color: rgba(138,138,150,0.8); }
