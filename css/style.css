@@ -2473,3 +2473,49 @@ html {
 /* Footer is always dark bg — force white logo */
 .footer .brand-logo { filter: brightness(0) invert(1) opacity(0.92); }
 [data-theme="light"] .footer .brand-logo { filter: brightness(0) invert(1) opacity(0.92); }
+
+/* ============================================================
+   NUMBER VISIBILITY FIXES
+   ============================================================ */
+
+/* Process rail nodes — solid red fill, white numeral */
+[data-theme="dark"] .process-row::before {
+  background: var(--red);
+  color: #ffffff;
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgba(196,24,24,0.20), 0 0 12px rgba(196,24,24,0.35);
+}
+[data-theme="dark"] .process-row:hover::before {
+  background: var(--red-bright);
+  border-color: var(--red-bright);
+  color: #ffffff;
+  box-shadow: 0 0 0 5px rgba(239,43,43,0.25), 0 0 16px rgba(239,43,43,0.45);
+}
+
+/* Light mode process nodes — keep white bg but make numeral darker/bolder */
+.process-row::before {
+  font-weight: 800;
+  color: var(--red);
+}
+
+/* Service card numbers — brighter in dark mode */
+[data-theme="dark"] .service-num {
+  color: rgba(255,255,255,0.55);
+  font-weight: 600;
+}
+
+/* Stats section numbers — ensure full opacity in dark */
+[data-theme="dark"] .stat .num { color: #f7f7f8; }
+[data-theme="dark"] .stat .num em { color: var(--red-bright); }
+[data-theme="dark"] .stat .label { color: rgba(138,138,150,1); }
+
+/* Stats band (dark bg always) */
+[data-theme="dark"] .stats-band .stat .num { color: #f7f7f8; }
+[data-theme="dark"] .stats-band .stat .num em { color: var(--red-bright); }
+
+/* About page stats (same dark band) */
+.stats-band .stat .num { color: #f7f7f8; }
+.stats-band .stat .label { color: rgba(200,200,205,0.9); }
+
+/* Process step nums in light mode */
+.process-num { color: rgba(11,11,13,0.18); }
