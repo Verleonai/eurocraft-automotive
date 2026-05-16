@@ -2602,3 +2602,536 @@ html {
   .shop-grid { grid-template-columns: 1fr; grid-template-rows: repeat(7, 220px); padding: 0.75rem; }
   .sg-a,.sg-b,.sg-c,.sg-d,.sg-e,.sg-f,.sg-g { grid-column: 1; grid-row: auto; }
 }
+
+/* ============================================================
+   DARK THEME BACKGROUND DEPTH
+   Adds visual texture, ambient glows, and photo watermarks
+   behind flat-black sections so nothing reads as empty void.
+   ============================================================ */
+
+/* 1. Base html body — very subtle noise grain via repeating gradient */
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 180% 60% at 50% 0%, rgba(196,24,24,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 120% 80% at 80% 100%, rgba(255,255,255,0.02) 0%, transparent 60%),
+    #060606;
+}
+
+/* 2. About / intro sections — warm red ambient right column */
+[data-theme="dark"] .about-section {
+  background:
+    radial-gradient(ellipse 70% 80% at 90% 50%, rgba(196,24,24,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 10% 80%, rgba(255,255,255,0.025) 0%, transparent 50%),
+    #060608;
+}
+
+/* 3. Services section — subtle vertical red column on right + grid lines */
+[data-theme="dark"] .services-section {
+  background:
+    radial-gradient(ellipse 80% 100% at 100% 50%, rgba(196,24,24,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 40% at 0% 0%, rgba(255,255,255,0.02) 0%, transparent 50%),
+    linear-gradient(180deg, #060606 0%, #080808 50%, #060606 100%);
+}
+[data-theme="dark"] .services-section::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(80% 70% at 50% 50%, black 0%, transparent 95%);
+}
+
+/* 4. Process section — workshop photo watermark at very low opacity */
+[data-theme="dark"] .process-section {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(196,24,24,0.08) 0%, transparent 55%),
+    linear-gradient(180deg, #060608 0%, #08080a 50%, #060608 100%);
+  position: relative;
+}
+[data-theme="dark"] .process-section::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(75% 70% at 50% 50%, black 0%, transparent 95%);
+}
+
+/* 5. Gallery section — dark blue-tinted background for contrast */
+[data-theme="dark"] .gallery-section {
+  background:
+    radial-gradient(ellipse 100% 50% at 50% 100%, rgba(196,24,24,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #060606 0%, #07070a 60%, #060606 100%);
+}
+
+/* 6. Testimonials — book-matched warm background */
+[data-theme="dark"] .testimonials-section {
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(196,24,24,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 80% 20%, rgba(255,255,255,0.025) 0%, transparent 50%),
+    linear-gradient(180deg, #060608 0%, #080809 50%, #060608 100%);
+}
+[data-theme="dark"] .testimonials-section::after {
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 18px);
+}
+
+/* 7. Contact section — warm dark with left glow */
+[data-theme="dark"] .contact-section {
+  background:
+    radial-gradient(ellipse 50% 80% at 0% 50%, rgba(196,24,24,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 60% at 100% 80%, rgba(255,255,255,0.025) 0%, transparent 50%),
+    #060608;
+}
+[data-theme="dark"] .contact-section::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* 8. shop-grid dark container — subtle car silhouette depth */
+[data-theme="dark"] .shop-grid {
+  background:
+    radial-gradient(ellipse 60% 60% at 25% 50%, rgba(196,24,24,0.10) 0%, transparent 55%),
+    #0a0a0d;
+  border-color: rgba(255,255,255,0.05);
+}
+
+/* 9. Stats band always dark — boost its depth */
+[data-theme="dark"] .stats-band {
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 0%, rgba(196,24,24,0.22) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 100% at 100% 100%, rgba(255,255,255,0.04) 0%, transparent 60%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 18px),
+    #030305;
+}
+
+/* 10. Why/Values section — slightly lighter dark with more red depth */
+[data-theme="dark"] .why-section {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(196,24,24,0.12) 0%, transparent 55%),
+    #030305;
+}
+
+/* Tighten section padding in dark mode so voids shrink */
+[data-theme="dark"] .section,
+[data-theme="dark"] .services-section,
+[data-theme="dark"] .process-section,
+[data-theme="dark"] .testimonials-section,
+[data-theme="dark"] .gallery-section,
+[data-theme="dark"] .about-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+/* ============================================================
+   DARK THEME DEPTH v2 — More aggressive, every section treated
+   ============================================================ */
+
+/* Global grain overlay on dark mode via SVG filter pseudo-element */
+[data-theme="dark"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Body-level ambient — very subtle red bleed from center */
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 100% 30% at 50% 0%, rgba(196,24,24,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(196,24,24,0.06) 0%, transparent 50%),
+    #060606;
+}
+
+/* About section — stronger glow */
+[data-theme="dark"] .about-section {
+  background:
+    radial-gradient(ellipse 90% 70% at 85% 50%, rgba(196,24,24,0.14) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 5% 30%, rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 22px),
+    #060608;
+}
+
+/* Services — brighter red column right edge */
+[data-theme="dark"] .services-section {
+  background:
+    radial-gradient(ellipse 60% 100% at 100% 50%, rgba(196,24,24,0.14) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(196,24,24,0.07) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 22px),
+    linear-gradient(180deg, #060606 0%, #090909 40%, #070708 100%);
+}
+
+/* Process — red spine glow behind the rail */
+[data-theme="dark"] .process-section {
+  background:
+    radial-gradient(ellipse 20% 90% at 10% 50%, rgba(196,24,24,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 30%, rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 22px),
+    linear-gradient(180deg, #060608 0%, #0a0a0d 40%, #060608 100%);
+}
+
+/* Gallery section — darker steel tint */
+[data-theme="dark"] .gallery-section {
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(196,24,24,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(30,30,50,0.4) 0%, transparent 60%),
+    #060608;
+}
+
+/* Testimonials — large red quote-mark echo glow */
+[data-theme="dark"] .testimonials-section {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,24,24,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 20px),
+    #060608;
+}
+
+/* Why section — spotlight effect center */
+[data-theme="dark"] .why-section {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(196,24,24,0.16) 0%, transparent 55%),
+    #030305;
+}
+
+/* Stats band — deeper metal + stronger red blast */
+.stats-band {
+  background:
+    radial-gradient(ellipse 140% 80% at 15% 0%, rgba(196,24,24,0.28) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 100% at 100% 100%, rgba(255,255,255,0.04) 0%, transparent 55%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 18px),
+    #030305;
+}
+
+/* Contact — stronger left red portal */
+[data-theme="dark"] .contact-section {
+  background:
+    radial-gradient(ellipse 60% 100% at 0% 50%, rgba(196,24,24,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 100% 0%, rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 22px),
+    #060608;
+}
+
+/* Nav on dark — tinted glass */
+[data-theme="dark"] .nav:not(.scrolled) {
+  background: linear-gradient(180deg, rgba(6,6,8,0.82) 0%, transparent 100%);
+  backdrop-filter: none;
+}
+
+/* Section dividers — make the red line glow more */
+[data-theme="dark"] .section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--red) 30%, var(--red) 70%, transparent 100%);
+  box-shadow: 0 0 12px rgba(196,24,24,0.6), 0 0 24px rgba(196,24,24,0.3);
+  position: relative;
+}
+[data-theme="dark"] .section-divider::after { display: none; }
+
+/* Brand cards on about page — darker tint for depth */
+[data-theme="dark"] .brands-grid {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.04);
+}
+
+/* ============================================================
+   DARK THEME DEPTH v3 — Fix top-of-section voids
+   Every section gets a top-center ambient glow.
+   Body becomes warm red-black, not cold neutral black.
+   ============================================================ */
+
+/* Warmer dark body — red-tinted black base */
+[data-theme="dark"] html { background: #050305; }
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 150% 25% at 50% 0%,   rgba(196,24,24,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 120% 20% at 50% 100%,  rgba(196,24,24,0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 60%  60% at 0%   50%,  rgba(196,24,24,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 60%  60% at 100% 50%,  rgba(196,24,24,0.06) 0%, transparent 55%),
+    #060305;                                       /* warm dark base */
+}
+
+/* Section backgrounds — all get top-center glow + diagonal texture */
+[data-theme="dark"] .about-section {
+  background:
+    radial-gradient(ellipse 100% 30% at 50%   0%,  rgba(196,24,24,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 80%  80% at 90%  50%,  rgba(196,24,24,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50%  50% at 5%  100%,  rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 22px),
+    #060305;
+}
+[data-theme="dark"] .services-section {
+  background:
+    radial-gradient(ellipse 100% 25% at 50%   0%,  rgba(196,24,24,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50%  90% at 100% 50%,  rgba(196,24,24,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 50%  40% at 0%  100%,  rgba(196,24,24,0.08) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 22px),
+    linear-gradient(180deg, #060305 0%, #08060a 50%, #060305 100%);
+}
+[data-theme="dark"] .process-section {
+  background:
+    radial-gradient(ellipse 100% 30% at 50%   0%,  rgba(196,24,24,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 25%  90% at 8%   50%,  rgba(196,24,24,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 50%  50% at 100% 80%,  rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 22px),
+    #060305;
+}
+[data-theme="dark"] .gallery-section {
+  background:
+    radial-gradient(ellipse 100% 25% at 50%   0%,  rgba(196,24,24,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 80%  40% at 50% 100%,  rgba(30,10,30,0.5)   0%, transparent 60%),
+    #060305;
+}
+[data-theme="dark"] .testimonials-section {
+  background:
+    radial-gradient(ellipse 100% 30% at 50%   0%,  rgba(196,24,24,0.11) 0%, transparent 55%),
+    radial-gradient(ellipse 80%  60% at 50%  50%,  rgba(196,24,24,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 40%  40% at 10%  80%,  rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 20px),
+    #060305;
+}
+[data-theme="dark"] .contact-section {
+  background:
+    radial-gradient(ellipse 100% 25% at 50%   0%,  rgba(196,24,24,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 60%  100% at 0%  50%,  rgba(196,24,24,0.16) 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 100%  0%,  rgba(255,255,255,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 22px),
+    #060305;
+}
+[data-theme="dark"] .why-section {
+  background:
+    radial-gradient(ellipse 80%  80% at 50%  50%,  rgba(196,24,24,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 20% at 50%   0%,  rgba(196,24,24,0.12) 0%, transparent 50%),
+    #020104;
+}
+
+/* Also warm the service cards slightly */
+[data-theme="dark"] .service-card { background: #0d0a0e; }
+[data-theme="dark"] .service-card:hover { background: #161019; }
+[data-theme="dark"] .process-row { background: #0d0a0e; }
+[data-theme="dark"] .testimonial { background: #0d0a0e; }
+[data-theme="dark"] .contact-item { background: #0d0a0e; }
+[data-theme="dark"] .form { background: #0d0a0e; }
+[data-theme="dark"] .field input,
+[data-theme="dark"] .field select,
+[data-theme="dark"] .field textarea { background: #060305; }
+
+/* ============================================================
+   DARK THEME DEPTH FINAL — Fixed full-page ambient layer
+   Sections become transparent. One rich background beneath.
+   ============================================================ */
+
+/* Fixed ambient canvas — scrolls with page, always visible */
+[data-theme="dark"] html {
+  background:
+    radial-gradient(ellipse 80%  35% at 50%   5%,  rgba(196,24,24,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 50%  60% at 5%   35%,  rgba(196,24,24,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50%  60% at 95%  35%,  rgba(196,24,24,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 70%  35% at 50%  70%,  rgba(196,24,24,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 40%  30% at 50%  95%,  rgba(196,24,24,0.10) 0%, transparent 55%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 20px),
+    #070305;
+}
+
+/* Body transparent — let html background show */
+[data-theme="dark"] body { background: transparent; }
+
+/* Make ALL section backgrounds either transparent or very lightly tinted */
+/* This lets the fixed html gradient show through everywhere */
+[data-theme="dark"] .about-section       { background: rgba(7,3,5,0.5); }
+[data-theme="dark"] .services-section    { background: rgba(5,3,6,0.55); }
+[data-theme="dark"] .process-section     { background: rgba(5,3,4,0.50); }
+[data-theme="dark"] .gallery-section     { background: transparent; }
+[data-theme="dark"] .testimonials-section{ background: rgba(6,3,5,0.55); }
+[data-theme="dark"] .contact-section     { background: rgba(5,3,5,0.55); }
+[data-theme="dark"] .marquee-section     { background: rgba(3,2,4,0.85); }
+[data-theme="dark"] .section             { background: transparent; }
+[data-theme="dark"] .section--alt        { background: rgba(255,255,255,0.015); }
+[data-theme="dark"] .stats-band          { background: rgba(3,1,3,0.90); }
+[data-theme="dark"] .why-section         { background: rgba(3,1,3,0.80); }
+[data-theme="dark"] .footer              { background: rgba(3,1,3,0.96); }
+[data-theme="dark"] .cta-section         { background: rgba(3,1,3,0.90); }
+[data-theme="dark"] .page-hero           { background: rgba(3,1,3,0.95); }
+[data-theme="dark"] .hero                { background: transparent; }
+[data-theme="dark"] .shop-grid           { background: rgba(8,4,8,0.80); border-color: rgba(255,255,255,0.04); }
+
+/* Process section — red glow left side for the rail */
+[data-theme="dark"] .process-section {
+  background:
+    radial-gradient(ellipse 20% 100% at 8% 50%, rgba(196,24,24,0.20) 0%, transparent 55%),
+    rgba(5,3,4,0.50);
+}
+
+/* Contact — red portal left */
+[data-theme="dark"] .contact-section {
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%, rgba(196,24,24,0.16) 0%, transparent 50%),
+    rgba(5,3,5,0.55);
+}
+
+/* Warm-tinted card backgrounds */
+[data-theme="dark"] .service-card        { background: rgba(15,8,14,0.95); }
+[data-theme="dark"] .service-card:hover  { background: rgba(22,12,20,0.98); }
+[data-theme="dark"] .process-row         { background: rgba(14,8,13,0.95); }
+[data-theme="dark"] .testimonial         { background: rgba(14,8,13,0.95); }
+[data-theme="dark"] .contact-item        { background: rgba(14,8,13,0.95); }
+[data-theme="dark"] .form                { background: rgba(14,8,13,0.95); }
+[data-theme="dark"] .why-card            { background: rgba(15,8,14,0.65); }
+[data-theme="dark"] .rating-badge        { background: rgba(14,8,13,0.95); }
+[data-theme="dark"] .field input,
+[data-theme="dark"] .field select,
+[data-theme="dark"] .field textarea      { background: rgba(5,3,5,0.90); }
+
+/* ============================================================
+   DARK THEME DEPTH FINAL v2 — background-attachment: fixed
+   The ambient glow stays locked to the viewport as you scroll.
+   This is how premium dark sites (Porsche, AMG) create atmosphere.
+   ============================================================ */
+
+[data-theme="dark"] html { background: #070305; }
+
+[data-theme="dark"] body {
+  background-color: transparent;
+  background-image:
+    radial-gradient(ellipse 100% 45% at 50%  0%,  rgba(196,24,24,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 45%  70% at 0%  40%,  rgba(196,24,24,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 45%  70% at 100% 40%,  rgba(196,24,24,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 80%  35% at 50%  85%,  rgba(196,24,24,0.14) 0%, transparent 55%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 20px);
+  background-attachment: fixed;  /* KEY: stays locked to viewport as you scroll */
+  background-color: #070305;
+}
+
+/* Light mode: keep normal scrolling background */
+[data-theme="light"] body {
+  background-attachment: scroll;
+  background-image: none;
+  background-color: var(--ivory);
+}
+
+/* ============================================================
+   DARK THEME DEPTH FINAL v3 — Explicit per-section gradients
+   Strong enough to show even in screenshot tools.
+   background-attachment:fixed is the premium layer for browsers.
+   ============================================================ */
+
+/* Explicit warm dark base + glow for each section */
+/* Top-of-section glow + side glows, all at higher opacity */
+[data-theme="dark"] .about-section {
+  background:
+    radial-gradient(ellipse 110% 30% at 50%   0%,  rgba(196,24,24,0.28) 0%, transparent 50%),
+    radial-gradient(ellipse  80% 70% at 95%  50%,  rgba(196,24,24,0.20) 0%, transparent 55%),
+    radial-gradient(ellipse  50% 50% at  5%  80%,  rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #070305;
+}
+[data-theme="dark"] .services-section {
+  background:
+    radial-gradient(ellipse 110% 30% at 50%   0%,  rgba(196,24,24,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse  50% 90% at 100%  50%,  rgba(196,24,24,0.22) 0%, transparent 50%),
+    radial-gradient(ellipse  40% 40% at  0%  100%,  rgba(196,24,24,0.14) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #07030a;
+}
+[data-theme="dark"] .process-section {
+  background:
+    radial-gradient(ellipse 110% 30% at 50%   0%,  rgba(196,24,24,0.26) 0%, transparent 50%),
+    radial-gradient(ellipse  22% 90% at  6%  50%,  rgba(196,24,24,0.30) 0%, transparent 55%),
+    radial-gradient(ellipse  50% 50% at 95%  80%,  rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #070305;
+}
+[data-theme="dark"] .gallery-section {
+  background:
+    radial-gradient(ellipse 110% 30% at 50%   0%,  rgba(196,24,24,0.22) 0%, transparent 50%),
+    radial-gradient(ellipse  80% 30% at 50% 100%,  rgba(30,10,40,0.50)  0%, transparent 60%),
+    #060305;
+}
+[data-theme="dark"] .testimonials-section {
+  background:
+    radial-gradient(ellipse 110% 35% at 50%   0%,  rgba(196,24,24,0.22) 0%, transparent 50%),
+    radial-gradient(ellipse  80% 60% at 50%  50%,  rgba(196,24,24,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse  40% 40% at 10%  80%,  rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 20px),
+    #070305;
+}
+[data-theme="dark"] .contact-section {
+  background:
+    radial-gradient(ellipse 110% 28% at 50%   0%,  rgba(196,24,24,0.24) 0%, transparent 50%),
+    radial-gradient(ellipse  55% 100% at 0%  50%,  rgba(196,24,24,0.24) 0%, transparent 50%),
+    radial-gradient(ellipse  50% 50% at 100%  0%,  rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #070305;
+}
+[data-theme="dark"] .why-section {
+  background:
+    radial-gradient(ellipse  90% 90% at 50%  50%,  rgba(196,24,24,0.26) 0%, transparent 55%),
+    radial-gradient(ellipse 110% 25% at 50%   0%,  rgba(196,24,24,0.18) 0%, transparent 50%),
+    #040104;
+}
+[data-theme="dark"] .marquee-section {
+  background:
+    radial-gradient(ellipse 100% 100% at 50%  50%,  rgba(196,24,24,0.15) 0%, transparent 55%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 16px),
+    #040104;
+}
+
+/* Bump top-of-section glow higher so it's unmistakable on any screen */
+[data-theme="dark"] .about-section,
+[data-theme="dark"] .services-section,
+[data-theme="dark"] .process-section,
+[data-theme="dark"] .testimonials-section,
+[data-theme="dark"] .gallery-section,
+[data-theme="dark"] .contact-section {
+  /* Each section gets a strong top-center red burst */
+  /* The radial-gradient below is layered ON TOP of the section-specific ones */
+}
+
+/* Stronger top burst — override the 0.28 with 0.45+ */
+[data-theme="dark"] .about-section {
+  background:
+    radial-gradient(ellipse 80% 25% at 50%  0%,  rgba(196,24,24,0.45) 0%, transparent 45%),
+    radial-gradient(ellipse 80% 70% at 95% 50%,  rgba(196,24,24,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at  5% 80%,  rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #070305;
+}
+[data-theme="dark"] .services-section {
+  background:
+    radial-gradient(ellipse 80% 25% at 50%   0%,  rgba(196,24,24,0.42) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 90% at 100%  50%,  rgba(196,24,24,0.24) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at   0% 100%,  rgba(196,24,24,0.18) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #07030a;
+}
+[data-theme="dark"] .process-section {
+  background:
+    radial-gradient(ellipse 80% 25% at 50%   0%,  rgba(196,24,24,0.44) 0%, transparent 45%),
+    radial-gradient(ellipse 22% 90% at  6%  50%,  rgba(196,24,24,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 95%  80%,  rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #070305;
+}
+[data-theme="dark"] .testimonials-section {
+  background:
+    radial-gradient(ellipse 80% 25% at 50%   0%,  rgba(196,24,24,0.42) 0%, transparent 45%),
+    radial-gradient(ellipse 80% 55% at 50%  50%,  rgba(196,24,24,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 10%  80%,  rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 20px),
+    #070305;
+}
+[data-theme="dark"] .contact-section {
+  background:
+    radial-gradient(ellipse 80% 25% at 50%   0%,  rgba(196,24,24,0.42) 0%, transparent 45%),
+    radial-gradient(ellipse 55% 100% at 0%  50%,  rgba(196,24,24,0.28) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 100% 0%,   rgba(255,255,255,0.04) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 22px),
+    #070305;
+}
+[data-theme="dark"] .gallery-section {
+  background:
+    radial-gradient(ellipse 80% 25% at 50%   0%,  rgba(196,24,24,0.38) 0%, transparent 45%),
+    radial-gradient(ellipse 80% 30% at 50% 100%,  rgba(30,10,40,0.55)  0%, transparent 60%),
+    #060305;
+}
