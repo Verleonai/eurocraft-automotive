@@ -3,3 +3,4 @@ _shots/
 scripts/
 *.old.*
 .DS_Store
+.vercel
