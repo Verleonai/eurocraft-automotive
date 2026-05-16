@@ -2309,3 +2309,147 @@ html {
   color: #f7f7f8;
 }
 [data-theme="dark"] .theme-toggle-btn:not(.active) { color: rgba(138,138,150,0.8); }
+
+/* ============================================================
+   DARK THEME — Fix all var(--jet) background elements
+   In dark mode --jet becomes light text, so these bg elements
+   need explicit dark overrides.
+   ============================================================ */
+
+/* The fundamental fix: all elements using --jet as background */
+[data-theme="dark"] .footer                 { background: #050507; border-top-color: rgba(255,255,255,0.05); }
+[data-theme="dark"] .footer-bottom          { border-top-color: rgba(255,255,255,0.07); color: rgba(138,138,150,0.85); }
+[data-theme="dark"] .footer .brand          { color: #f7f7f8; }
+[data-theme="dark"] .footer-brand p         { color: rgba(138,138,150,1); }
+[data-theme="dark"] .footer-col h4          { color: rgba(138,138,150,1); }
+[data-theme="dark"] .footer-col a,
+[data-theme="dark"] .footer-col li          { color: rgba(232,232,234,0.85); }
+
+[data-theme="dark"] .cta-section            { background: #050507; }
+[data-theme="dark"] .cta-section::before    {
+  background: linear-gradient(180deg, #050507 0%, transparent 14%, transparent 86%, #050507 100%);
+}
+[data-theme="dark"] .cta-section .btn-ghost:hover { color: #050507; }
+
+[data-theme="dark"] .why-section            { background: #030305; }
+[data-theme="dark"] .why-bg                 { opacity: 0.35; filter: brightness(0.28) saturate(0.75); }
+
+[data-theme="dark"] .gallery-grid           { background: #030305; border-color: rgba(255,255,255,0.03); }
+
+[data-theme="dark"] .marquee-section        { background: #0a0a0d; border-color: rgba(255,255,255,0.05); }
+
+[data-theme="dark"] .mobile-menu           { background: #060608; }
+
+[data-theme="dark"] .btn-primary::before   { background: #1c1c22; }
+[data-theme="dark"] .btn-ghost             { color: #f7f7f8; border-color: rgba(255,255,255,0.18); }
+[data-theme="dark"] .btn-ghost::before     { background: rgba(255,255,255,0.08); }
+[data-theme="dark"] .btn-ghost:hover       { color: #f7f7f8; border-color: rgba(255,255,255,0.4); }
+[data-theme="dark"] .nav-cta::before       { background: #1c1c22; }
+
+[data-theme="dark"] .brand-card--more      { background: #0f0f12; }
+
+[data-theme="dark"] .map-static-info       { background: #030305; }
+
+[data-theme="dark"] .stats-band            { background: #030305; }
+
+/* Section divider stays red */
+[data-theme="dark"] .section-divider { background: linear-gradient(90deg, transparent, var(--red), transparent); }
+
+/* theme-toggle active button in dark mode */
+[data-theme="dark"] .theme-toggle-btn.active { background: #1c1c22; color: #f7f7f8; }
+
+/* Back-to-top */
+[data-theme="dark"] #back-to-top { background: #111114; border-color: rgba(255,255,255,0.08); }
+
+/* Rating badge */
+[data-theme="dark"] .rating-badge { background: #111114; border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .rating-badge-score { color: #f7f7f8; }
+[data-theme="dark"] .rating-badge-label { color: rgba(138,138,150,1); }
+
+/* About img overlay */
+[data-theme="dark"] .about-img::after { background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.5) 100%); }
+
+/* Process section tile */
+[data-theme="dark"] .process-section { background: #060608; }
+[data-theme="dark"] .process-row { background: #0f0f12; border-color: rgba(255,255,255,0.05); }
+[data-theme="dark"] .process-row::before { background: #0f0f12; }
+[data-theme="dark"] .process-row:hover { background: #141418; border-color: rgba(196,24,24,0.45); }
+[data-theme="dark"] .process-num { color: rgba(255,255,255,0.1); }
+[data-theme="dark"] .process-title { color: #f7f7f8; }
+[data-theme="dark"] .process-desc { color: rgba(138,138,150,1); }
+
+/* Testimonials */
+[data-theme="dark"] .testimonials-section { background: #060608; }
+[data-theme="dark"] .testimonial { background: #0f0f12; border-color: rgba(255,255,255,0.05); }
+[data-theme="dark"] .testimonial blockquote { color: rgba(232,232,234,0.9); }
+[data-theme="dark"] .testimonial .author-info strong { color: #f7f7f8; }
+[data-theme="dark"] .testimonial .author-info span { color: rgba(138,138,150,1); }
+[data-theme="dark"] .testimonials-section::before { color: rgba(209,27,27,0.05); }
+
+/* Contact */
+[data-theme="dark"] .contact-section { background: #060608; }
+[data-theme="dark"] .contact-item { background: #0f0f12; border-color: rgba(255,255,255,0.05); }
+[data-theme="dark"] .contact-item h4 { color: rgba(138,138,150,1); }
+[data-theme="dark"] .contact-item p,
+[data-theme="dark"] .contact-item a { color: #f7f7f8; }
+[data-theme="dark"] .form { background: #0f0f12; border-color: rgba(255,255,255,0.05); }
+[data-theme="dark"] .form::before { background: linear-gradient(90deg, var(--red), transparent); }
+[data-theme="dark"] .field label { color: rgba(232,232,234,0.85); }
+[data-theme="dark"] .field input,
+[data-theme="dark"] .field select,
+[data-theme="dark"] .field textarea { background: #060608; border-color: rgba(255,255,255,0.08); color: #f7f7f8; }
+[data-theme="dark"] .field input:focus,
+[data-theme="dark"] .field select:focus,
+[data-theme="dark"] .field textarea:focus { background: #0f0f12; border-color: var(--red); }
+[data-theme="dark"] .field input::placeholder,
+[data-theme="dark"] .field textarea::placeholder { color: rgba(138,138,150,0.6); }
+[data-theme="dark"] .map-static-visual-fallback { background: #0a0a0d; color: rgba(138,138,150,1); }
+
+/* Gallery page filter pills */
+[data-theme="dark"] .filter-bar button { background: #0f0f12; border-color: rgba(255,255,255,0.07); color: rgba(138,138,150,1); }
+[data-theme="dark"] .filter-bar button:hover { color: #f7f7f8; border-color: rgba(255,255,255,0.25); }
+
+/* About page */
+[data-theme="dark"] .about-section { background: #060608; }
+[data-theme="dark"] .services-section { background: linear-gradient(180deg, #060608 0%, #0a0a0d 100%); }
+
+/* Brand cards on about */
+[data-theme="dark"] .brand-card { background: #0f0f12; }
+[data-theme="dark"] .brand-card:hover { background: #141418; }
+[data-theme="dark"] .brand-card h3 { color: #f7f7f8; }
+[data-theme="dark"] .brand-card p { color: rgba(138,138,150,1); }
+[data-theme="dark"] .brand-card ul li { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.07); color: rgba(232,232,234,0.85); }
+[data-theme="dark"] .brand-card-cc { color: var(--red-bright); }
+
+/* Service cards */
+[data-theme="dark"] .services-grid { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.04); }
+[data-theme="dark"] .service-card { background: #0f0f12; }
+[data-theme="dark"] .service-card:hover { background: #141418; }
+[data-theme="dark"] .service-title { color: #f7f7f8; }
+[data-theme="dark"] .service-card p { color: rgba(138,138,150,1); }
+[data-theme="dark"] .service-card ul li { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.06); color: rgba(232,232,234,0.85); }
+[data-theme="dark"] .service-arrow { color: rgba(138,138,150,0.6); }
+[data-theme="dark"] .service-num { color: rgba(138,138,150,0.7); }
+
+/* Services detail page */
+[data-theme="dark"] .svc-detail { border-bottom-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .svc-detail h2 { color: #f7f7f8; }
+[data-theme="dark"] .svc-detail p { color: rgba(138,138,150,1); }
+[data-theme="dark"] .svc-detail ul.feature-list li { color: rgba(232,232,234,0.85); }
+[data-theme="dark"] .svc-num { color: var(--red); }
+
+/* ============================================================
+   DARK THEME — CTA section final fix (overrides all previous)
+   ============================================================ */
+[data-theme="dark"] .cta-bg img {
+  filter: brightness(0.18) saturate(0.7) contrast(1.1);
+}
+[data-theme="dark"] .cta-section::before {
+  background:
+    radial-gradient(60% 60% at 20% 50%, rgba(196,24,24,0.12) 0%, transparent 55%),
+    linear-gradient(180deg, #050507 0%, rgba(5,5,7,0.7) 20%, rgba(5,5,7,0.7) 80%, #050507 100%);
+  z-index: -1;
+}
+[data-theme="dark"] .cta-content .eyebrow { color: rgba(138,138,150,1); }
+[data-theme="dark"] .cta-content h2 { color: #f7f7f8; }
+[data-theme="dark"] .cta-content p { color: rgba(232,232,234,0.85); }
