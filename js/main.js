@@ -1,5 +1,30 @@
 /* EuroCraft Automotive — Interactions */
 
+/* Lazy image fade-in */
+(function() {
+  const imgs = document.querySelectorAll('img[loading="lazy"]');
+  // If screenshot/all mode, show immediately
+  if (location.search.includes('all')) {
+    imgs.forEach(img => img.classList.add('loaded'));
+    return;
+  }
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const img = e.target;
+          if (img.complete) img.classList.add('loaded');
+          else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+          io.unobserve(img);
+        }
+      });
+    }, { rootMargin: '200px' });
+    imgs.forEach(img => io.observe(img));
+  } else {
+    imgs.forEach(img => img.classList.add('loaded'));
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   /* ---------- BYPASS REVEAL FOR FULL-PAGE CAPTURES ---------- */
   if (location.search.includes('all')) {

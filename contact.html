@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="images/webp/shop-8.webp" type="image/webp">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="canonical" href="https://www.eurocraftautomotive.com/contact.html">
-<link rel="stylesheet" href="css/style.css?v=1778958404">
+<link rel="stylesheet" href="css/style.css?v=1778959256">
 
   <meta property="og:title" content="Contact EuroCraft Automotive — Book a Service in Orlando">
   <meta property="og:description" content="Call (407) 512-5877 or schedule online. Located at 9751 Delegates Drive, Suite 200, Orlando FL 32837. Mon–Fri 9AM–6PM.">
@@ -64,6 +65,14 @@
     "knowsAbout": ["Porsche","BMW","Mercedes-Benz","Audi","Volkswagen","European auto repair","ECU tuning","diagnostics","programming"]
   }
   </script>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -88,8 +97,9 @@
   </ul>
 </div>
 
+<main id="main-content">
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="images/shop-8.jpg" alt=""></div>
+  <div class="page-hero-bg"><picture><source srcset="images/webp/shop-8.webp" type="image/webp"><img src="images/shop-8.jpg" alt=""></picture></div>
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Contact</span></div>
     <div class="eyebrow mb-2">Get in Touch</div>
@@ -240,7 +250,7 @@
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="cta-bg"><img src="images/cta-bg.jpg" alt=""></div>
+  <div class="cta-bg"><picture><source srcset="images/webp/cta-bg.webp" type="image/webp"><img src="images/cta-bg.jpg" alt=""></picture></div>
   <div class="container cta-content reveal">
     <div class="eyebrow">Or Skip the Form</div>
     <h2 class="display-1">Book it online.</h2>
@@ -252,6 +262,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -276,5 +287,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

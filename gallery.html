@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="images/webp/shop-6.webp" type="image/webp">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="canonical" href="https://www.eurocraftautomotive.com/gallery.html">
-<link rel="stylesheet" href="css/style.css?v=1778958404">
+<link rel="stylesheet" href="css/style.css?v=1778959256">
 <style>
   .filter-bar {
     display: flex;
@@ -127,6 +128,14 @@
     "knowsAbout": ["Porsche","BMW","Mercedes-Benz","Audi","Volkswagen","European auto repair","ECU tuning","diagnostics","programming"]
   }
   </script>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -151,8 +160,9 @@
   </ul>
 </div>
 
+<main id="main-content">
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="images/shop-6.jpg" alt=""></div>
+  <div class="page-hero-bg"><picture><source srcset="images/webp/shop-6.webp" type="image/webp"><img src="images/shop-6.jpg" alt=""></picture></div>
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Gallery</span></div>
     <div class="eyebrow mb-2">Inside The Shop</div>
@@ -172,21 +182,21 @@
     </div>
 
     <div class="gallery-grid reveal" id="gallery">
-      <div class="gallery-item tall" data-cat="workshop"><img src="images/shop-1.jpg" alt=""></div>
-      <div class="gallery-item wide" data-cat="performance"><img src="images/ecu-tuning.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="workshop"><img src="images/shop-2.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="diagnostics"><img src="images/shop-3.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="workshop"><img src="images/shop-4.jpg" alt=""></div>
-      <div class="gallery-item wide-2" data-cat="workshop"><img src="images/shop-5.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="performance"><img src="images/shop-6.jpg" alt=""></div>
-      <div class="gallery-item wide" data-cat="vehicles"><img src="images/porsche.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="vehicles"><img src="images/bmw.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="vehicles"><img src="images/mercedes.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="vehicles"><img src="images/audi.jpg" alt=""></div>
-      <div class="gallery-item wide-2" data-cat="performance"><img src="images/gauge.jpg" alt=""></div>
-      <div class="gallery-item square" data-cat="performance"><img src="images/brakes.jpg" alt=""></div>
-      <div class="gallery-item std" data-cat="workshop"><img src="images/shop-7.jpg" alt=""></div>
-      <div class="gallery-item std" data-cat="workshop"><img src="images/shop-8.jpg" alt=""></div>
+      <div class="gallery-item tall" data-cat="workshop"><picture><source srcset="images/webp/shop-1.webp" type="image/webp"><img src="images/shop-1.jpg" alt=""></picture></div>
+      <div class="gallery-item wide" data-cat="performance"><picture><source srcset="images/webp/ecu-tuning.webp" type="image/webp"><img loading="lazy" src="images/ecu-tuning.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="workshop"><picture><source srcset="images/webp/shop-2.webp" type="image/webp"><img loading="lazy" src="images/shop-2.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="diagnostics"><picture><source srcset="images/webp/shop-3.webp" type="image/webp"><img loading="lazy" src="images/shop-3.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="workshop"><picture><source srcset="images/webp/shop-4.webp" type="image/webp"><img loading="lazy" src="images/shop-4.jpg" alt=""></picture></div>
+      <div class="gallery-item wide-2" data-cat="workshop"><picture><source srcset="images/webp/shop-5.webp" type="image/webp"><img loading="lazy" src="images/shop-5.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="performance"><picture><source srcset="images/webp/shop-6.webp" type="image/webp"><img loading="lazy" src="images/shop-6.jpg" alt=""></picture></div>
+      <div class="gallery-item wide" data-cat="vehicles"><picture><source srcset="images/webp/porsche.webp" type="image/webp"><img loading="lazy" src="images/porsche.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="vehicles"><picture><source srcset="images/webp/bmw.webp" type="image/webp"><img loading="lazy" src="images/bmw.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="vehicles"><picture><source srcset="images/webp/mercedes.webp" type="image/webp"><img loading="lazy" src="images/mercedes.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="vehicles"><picture><source srcset="images/webp/audi.webp" type="image/webp"><img loading="lazy" src="images/audi.jpg" alt=""></picture></div>
+      <div class="gallery-item wide-2" data-cat="performance"><picture><source srcset="images/webp/gauge.webp" type="image/webp"><img loading="lazy" src="images/gauge.jpg" alt=""></picture></div>
+      <div class="gallery-item square" data-cat="performance"><picture><source srcset="images/webp/brakes.webp" type="image/webp"><img loading="lazy" src="images/brakes.jpg" alt=""></picture></div>
+      <div class="gallery-item std" data-cat="workshop"><picture><source srcset="images/webp/shop-7.webp" type="image/webp"><img loading="lazy" src="images/shop-7.jpg" alt=""></picture></div>
+      <div class="gallery-item std" data-cat="workshop"><picture><source srcset="images/webp/shop-8.webp" type="image/webp"><img src="images/shop-8.jpg" alt=""></picture></div>
     </div>
   </div>
 </section>
@@ -196,12 +206,12 @@
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav prev" id="lb-prev">‹</button>
   <button class="lightbox-nav next" id="lb-next">›</button>
-  <img id="lb-img" src="" alt="">
+  <img loading="lazy" id="lb-img" src="" alt="">
 </div>
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="cta-bg"><img src="images/cta-bg.jpg" alt=""></div>
+  <div class="cta-bg"><picture><source srcset="images/webp/cta-bg.webp" type="image/webp"><img src="images/cta-bg.jpg" alt=""></picture></div>
   <div class="container cta-content reveal">
     <div class="eyebrow">Yours Could Be Next</div>
     <h2 class="display-1">Bring it in.</h2>
@@ -213,6 +223,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -237,6 +248,7 @@
 </footer>
 
 <script src="js/main.js"></script>
+  <script src="js/app.js" defer></script>
 <script>
   // Filter
   document.querySelectorAll('.filter-bar button').forEach(b => {

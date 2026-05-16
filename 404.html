@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f5f1">
+<title>404 — Page Not Found · EuroCraft Automotive</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .notfound {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem var(--gutter);
+    background: var(--ivory);
+    position: relative;
+    overflow: hidden;
+  }
+  .notfound::before {
+    content: '404';
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: clamp(14rem, 35vw, 28rem);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(11,11,13,0.07);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .notfound-content { position: relative; z-index: 1; max-width: 640px; }
+  .notfound-eyebrow { margin-bottom: 1.4rem; justify-content: center; }
+  .notfound h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: var(--jet);
+    margin-bottom: 1.4rem;
+  }
+  .notfound p { color: var(--ink); font-size: 1.1rem; margin-bottom: 2.4rem; max-width: 42ch; margin-inline: auto; }
+  .notfound-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .divider { margin: 1.4rem auto; }
+</style>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<div class="loader"><div class="loader-inner"><div class="loader-text">EUROCRAFT</div><div class="loader-bar"></div></div></div>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="EuroCraft Automotive">
+    <img src="assets/logo-real.png" alt="EuroCraft Automotive" class="brand-logo" width="169" height="80" loading="eager">
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a class="nav-cta" href="https://book.eurocraftautomotive.com/"><span>Book Service →</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+</header>
+<div class="mobile-menu" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://book.eurocraftautomotive.com/" style="color: var(--red);">Book →</a></li>
+  </ul>
+</div>
+
+<main>
+  <div class="notfound">
+    <div class="notfound-content">
+      <div class="eyebrow notfound-eyebrow">404 · Page Not Found</div>
+      <h1>Wrong<br><span class="red">Turn.</span></h1>
+      <div class="divider"></div>
+      <p>This page doesn't exist — or it moved. Let's get you back on the right road.</p>
+      <div class="notfound-actions">
+        <a class="btn btn-primary" href="index.html" data-magnetic><span>Back to Home <span class="arrow">→</span></span></a>
+        <a class="btn btn-ghost" href="contact.html"><span>Contact Us</span></a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

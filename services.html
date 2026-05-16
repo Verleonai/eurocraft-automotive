@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="images/webp/ecu-tuning.webp" type="image/webp">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="canonical" href="https://www.eurocraftautomotive.com/services.html">
-<link rel="stylesheet" href="css/style.css?v=1778958404">
+<link rel="stylesheet" href="css/style.css?v=1778959256">
 <style>
   .svc-detail {
     display: grid;
@@ -133,6 +134,14 @@
     "knowsAbout": ["Porsche","BMW","Mercedes-Benz","Audi","Volkswagen","European auto repair","ECU tuning","diagnostics","programming"]
   }
   </script>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -160,8 +169,9 @@
   </ul>
 </div>
 
+<main id="main-content">
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="images/ecu-tuning.jpg" alt=""></div>
+  <div class="page-hero-bg"><picture><source srcset="images/webp/ecu-tuning.webp" type="image/webp"><img src="images/ecu-tuning.jpg" alt=""></picture></div>
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Services</span></div>
     <div class="eyebrow mb-2">Our Capabilities</div>
@@ -185,7 +195,7 @@
     <!-- 01 MAINTENANCE -->
     <article id="maintenance" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/shop-7.jpg" alt="Scheduled maintenance">
+        <picture><source srcset="images/webp/shop-7.webp" type="image/webp"><img src="images/shop-7.jpg" alt="Scheduled maintenance"></picture>
         <span class="svc-detail-tag">01 · Maintenance</span>
       </div>
       <div>
@@ -208,7 +218,7 @@
     <!-- 02 DIAGNOSTICS -->
     <article id="diagnostics" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/ecu-tuning.jpg" alt="Diagnostics">
+        <picture><source srcset="images/webp/ecu-tuning.webp" type="image/webp"><img loading="lazy" src="images/ecu-tuning.jpg" alt="Diagnostics"></picture>
         <span class="svc-detail-tag">02 · Diagnostics</span>
       </div>
       <div>
@@ -231,7 +241,7 @@
     <!-- 03 ENGINE -->
     <article id="engine" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/shop-2.jpg" alt="Engine repair">
+        <picture><source srcset="images/webp/shop-2.webp" type="image/webp"><img loading="lazy" src="images/shop-2.jpg" alt="Engine repair"></picture>
         <span class="svc-detail-tag">03 · Engine</span>
       </div>
       <div>
@@ -254,7 +264,7 @@
     <!-- 04 BRAKES -->
     <article id="brakes" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/brakes.jpg" alt="Brake systems">
+        <picture><source srcset="images/webp/brakes.webp" type="image/webp"><img loading="lazy" src="images/brakes.jpg" alt="Brake systems"></picture>
         <span class="svc-detail-tag">04 · Brakes</span>
       </div>
       <div>
@@ -277,7 +287,7 @@
     <!-- 05 SUSPENSION -->
     <article id="suspension" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/suspension.jpg" alt="Suspension">
+        <picture><source srcset="images/webp/suspension.webp" type="image/webp"><img loading="lazy" src="images/suspension.jpg" alt="Suspension"></picture>
         <span class="svc-detail-tag">05 · Suspension</span>
       </div>
       <div>
@@ -330,7 +340,7 @@
     <!-- 06 ALIGNMENT -->
     <article id="alignment" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/shop-4.jpg" alt="Wheel alignment">
+        <picture><source srcset="images/webp/shop-4.webp" type="image/webp"><img loading="lazy" src="images/shop-4.jpg" alt="Wheel alignment"></picture>
         <span class="svc-detail-tag">06 · Alignment</span>
       </div>
       <div>
@@ -352,7 +362,7 @@
     <!-- 07 PROGRAMMING -->
     <article id="programming" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/shop-6.jpg" alt="Programming and coding">
+        <picture><source srcset="images/webp/shop-6.webp" type="image/webp"><img loading="lazy" src="images/shop-6.jpg" alt="Programming and coding"></picture>
         <span class="svc-detail-tag">07 · Programming</span>
       </div>
       <div>
@@ -375,7 +385,7 @@
     <!-- 08 TUNING -->
     <article id="tuning" class="svc-detail reveal">
       <div class="svc-detail-media">
-        <img src="images/gauge.jpg" alt="Performance tuning">
+        <picture><source srcset="images/webp/gauge.webp" type="image/webp"><img loading="lazy" src="images/gauge.jpg" alt="Performance tuning"></picture>
         <span class="svc-detail-tag">08 · Performance</span>
       </div>
       <div>
@@ -399,7 +409,7 @@
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="cta-bg"><img src="images/cta-bg.jpg" alt=""></div>
+  <div class="cta-bg"><picture><source srcset="images/webp/cta-bg.webp" type="image/webp"><img loading="lazy" src="images/cta-bg.jpg" alt=""></picture></div>
   <div class="container cta-content reveal">
     <div class="eyebrow">Not Sure What You Need?</div>
     <h2 class="display-1">Start with a <span class="red">diagnostic.</span></h2>
@@ -413,6 +423,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -437,5 +448,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

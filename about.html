@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="preload" as="image" href="images/webp/shop-1.webp" type="image/webp">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="canonical" href="https://www.eurocraftautomotive.com/about.html">
-<link rel="stylesheet" href="css/style.css?v=1778958404">
+<link rel="stylesheet" href="css/style.css?v=1778959256">
 
   <meta property="og:title" content="About EuroCraft Automotive — The Dealer Alternative Orlando Deserves">
   <meta property="og:description" content="Factory-trained technicians, manufacturer-level tools, transparent pricing. Not a quick-lube. Not a chain. The dealer alternative Orlando deserves.">
@@ -64,6 +65,14 @@
     "knowsAbout": ["Porsche","BMW","Mercedes-Benz","Audi","Volkswagen","European auto repair","ECU tuning","diagnostics","programming"]
   }
   </script>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -103,8 +112,9 @@
 </div>
 
 <!-- PAGE HERO -->
+<main id="main-content">
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="images/shop-1.jpg" alt=""></div>
+  <div class="page-hero-bg"><picture><source srcset="images/webp/shop-1.webp" type="image/webp"><img src="images/shop-1.jpg" alt=""></picture></div>
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>About</span></div>
     <div class="eyebrow mb-2">Our Story</div>
@@ -118,7 +128,7 @@
   <div class="container split split-5-7">
     <div class="reveal-x">
       <div class="about-img">
-        <img src="images/shop-5.jpg" alt="Our workshop">
+        <picture><source srcset="images/webp/shop-5.webp" type="image/webp"><img src="images/shop-5.jpg" alt="Our workshop"></picture>
       </div>
     </div>
     <div class="reveal">
@@ -227,7 +237,7 @@
 
     <div class="brands-grid reveal">
       <div class="brand-card">
-        <div class="brand-card-img"><img src="images/porsche.jpg" alt="Porsche service" loading="lazy"></div>
+        <div class="brand-card-img"><picture><source srcset="images/webp/porsche.webp" type="image/webp"><img src="images/porsche.jpg" alt="Porsche service" loading="lazy"></picture></div>
         <div class="brand-card-body">
           <span class="brand-card-cc">DE</span>
           <h3>Porsche</h3>
@@ -236,7 +246,7 @@
         </div>
       </div>
       <div class="brand-card">
-        <div class="brand-card-img"><img src="images/bmw.jpg" alt="BMW service" loading="lazy"></div>
+        <div class="brand-card-img"><picture><source srcset="images/webp/bmw.webp" type="image/webp"><img src="images/bmw.jpg" alt="BMW service" loading="lazy"></picture></div>
         <div class="brand-card-body">
           <span class="brand-card-cc">DE</span>
           <h3>BMW</h3>
@@ -245,7 +255,7 @@
         </div>
       </div>
       <div class="brand-card">
-        <div class="brand-card-img"><img src="images/mercedes.jpg" alt="Mercedes-Benz service" loading="lazy"></div>
+        <div class="brand-card-img"><picture><source srcset="images/webp/mercedes.webp" type="image/webp"><img src="images/mercedes.jpg" alt="Mercedes-Benz service" loading="lazy"></picture></div>
         <div class="brand-card-body">
           <span class="brand-card-cc">DE</span>
           <h3>Mercedes-Benz</h3>
@@ -254,7 +264,7 @@
         </div>
       </div>
       <div class="brand-card">
-        <div class="brand-card-img"><img src="images/audi.jpg" alt="Audi service" loading="lazy"></div>
+        <div class="brand-card-img"><picture><source srcset="images/webp/audi.webp" type="image/webp"><img src="images/audi.jpg" alt="Audi service" loading="lazy"></picture></div>
         <div class="brand-card-body">
           <span class="brand-card-cc">DE</span>
           <h3>Audi</h3>
@@ -263,7 +273,7 @@
         </div>
       </div>
       <div class="brand-card">
-        <div class="brand-card-img"><img src="images/vw.jpg" alt="Volkswagen service" loading="lazy"></div>
+        <div class="brand-card-img"><picture><source srcset="images/webp/vw.webp" type="image/webp"><img src="images/vw.jpg" alt="Volkswagen service" loading="lazy"></picture></div>
         <div class="brand-card-body">
           <span class="brand-card-cc">DE</span>
           <h3>Volkswagen</h3>
@@ -286,7 +296,7 @@
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="cta-bg"><img src="images/cta-bg.jpg" alt=""></div>
+  <div class="cta-bg"><picture><source srcset="images/webp/cta-bg.webp" type="image/webp"><img loading="lazy" src="images/cta-bg.jpg" alt=""></picture></div>
   <div class="container cta-content reveal">
     <div class="eyebrow">Come See For Yourself</div>
     <h2 class="display-1">Stop by the shop.</h2>
@@ -300,6 +310,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -324,5 +335,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
