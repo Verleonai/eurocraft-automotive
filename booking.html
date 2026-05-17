@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book a Service — EuroCraft Automotive | Orlando, FL</title>
+  <meta name="description" content="Book your European auto service appointment online. EuroCraft Automotive — dealer-level diagnostics, maintenance, and performance in Orlando, FL.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://www.eurocraftautomotive.com/booking.html">
+
+  <!-- OG -->
+  <meta property="og:title" content="Book a Service — EuroCraft Automotive">
+  <meta property="og:description" content="Schedule your European auto service appointment online. Orlando's dealer alternative.">
+  <meta property="og:url" content="https://www.eurocraftautomotive.com/booking.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EuroCraft Automotive">
+  <meta property="og:image" content="https://eurocraftautomotive.com/assets/og-image.png">
+
+  <!-- Theme init (prevent flash) -->
+  <script>
+    var t = localStorage.getItem('ec_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+  <link rel="stylesheet" href="css/style.css?v=booking1">
+
+  <!-- HubSpot Tracking -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/XXXXXXXX.js"></script>
+
+  <style>
+    /* ── Booking page specific ── */
+    .booking-hero {
+      min-height: 28vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 3.5rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--base);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .booking-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 0%, rgba(200,0,0,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .booking-hero .container { position: relative; z-index: 1; }
+    .booking-crumb {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      margin-bottom: 1rem;
+    }
+    .booking-crumb a { color: var(--graphite); text-decoration: none; }
+    .booking-crumb a:hover { color: var(--red); }
+    .booking-crumb span { margin: 0 0.5rem; }
+
+    /* Steps bar */
+    .booking-steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 3rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .booking-step {
+      flex: 1;
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s;
+    }
+    .booking-step:last-child { border-right: none; }
+    .booking-step.active { background: rgba(200,0,0,0.08); }
+    .booking-step.done { background: rgba(255,255,255,0.02); }
+    .step-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.07);
+      color: var(--graphite);
+    }
+    .booking-step.active .step-num { background: var(--red); color: #fff; }
+    .booking-step.done .step-num { background: rgba(255,255,255,0.1); color: var(--ivory); }
+    .step-label { font-size: 0.82rem; font-weight: 500; color: var(--graphite); line-height: 1.3; }
+    .booking-step.active .step-label { color: var(--ivory); }
+
+    /* Layout */
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 3rem;
+      align-items: flex-start;
+      padding: 4rem 0 6rem;
+    }
+
+    /* Calendar embed */
+    .booking-calendar-wrap {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      overflow: hidden;
+      min-height: 640px;
+      position: relative;
+    }
+    .booking-calendar-wrap .loading-state {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--graphite);
+      font-size: 0.9rem;
+    }
+    .loading-spinner {
+      width: 32px; height: 32px;
+      border: 2px solid rgba(255,255,255,0.08);
+      border-top-color: var(--red);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* HubSpot meetings embed */
+    .meetings-iframe-container { min-height: 640px; }
+    .meetings-iframe-container iframe {
+      width: 100% !important;
+      border: none !important;
+      min-height: 640px;
+      border-radius: 14px;
+    }
+
+    /* Sidebar */
+    .booking-sidebar { display: flex; flex-direction: column; gap: 1.6rem; }
+
+    .sidebar-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1.6rem;
+    }
+    .sidebar-card h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      margin: 0 0 1.2rem;
+    }
+    .sidebar-item {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .sidebar-item:last-child { margin-bottom: 0; }
+    .sidebar-item svg { flex-shrink: 0; margin-top: 2px; }
+
+    .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+    .service-tag {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--graphite);
+      cursor: default;
+    }
+
+    .sidebar-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 1.2rem 0; }
+
+    .sidebar-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .sidebar-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .sidebar-cta a:hover { opacity: 0.85; }
+    .sidebar-cta .cta-call {
+      background: var(--red);
+      color: #fff;
+    }
+    .sidebar-cta .cta-directions {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--ivory);
+    }
+
+    /* Trust row */
+    .booking-trust {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+    .trust-item {
+      background: var(--base);
+      padding: 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
+    }
+    .trust-item strong { font-size: 1.1rem; color: var(--ivory); }
+    .trust-item span { font-size: 0.78rem; color: var(--graphite); line-height: 1.3; }
+
+    /* Dark theme overrides */
+    [data-theme="dark"] .booking-calendar-wrap,
+    [data-theme="dark"] .sidebar-card {
+      background: rgba(0,0,0,0.2);
+      border-color: rgba(255,255,255,0.06);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .booking-layout { grid-template-columns: 1fr; }
+      .booking-sidebar { order: -1; }
+      .booking-trust { grid-template-columns: repeat(2, 1fr); }
+      .booking-steps { flex-direction: column; border-radius: 10px; }
+      .booking-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .booking-step:last-child { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .booking-trust { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="brand" aria-label="EuroCraft Automotive home">
+    <img src="assets/logo-real.png" alt="EuroCraft Automotive" class="brand-logo" width="169" height="80" loading="eager">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a class="nav-cta active" href="booking.html" data-magnetic><span>Book Service →</span></a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-menu" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" style="color: var(--red);">Book →</a></li>
+  </ul>
+</div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="booking-hero">
+    <div class="container">
+      <div class="booking-crumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span style="color:var(--ivory);">Book a Service</span>
+      </div>
+      <div class="eyebrow mb-2">Online Scheduling</div>
+      <h1 class="display-1">Book Your <span class="red">Appointment</span></h1>
+      <p class="lead" style="max-width:52ch;margin-top:0.8rem;">
+        Select a date and time that works for you. We'll confirm within one business day and send a reminder before your visit.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:3rem;">
+    <div class="container">
+
+      <!-- STEPS BAR -->
+      <div class="booking-steps">
+        <div class="booking-step active">
+          <div class="step-num">1</div>
+          <div class="step-label">Pick a date<br>& time</div>
+        </div>
+        <div class="booking-step">
+          <div class="step-num">2</div>
+          <div class="step-label">Enter your<br>details</div>
+        </div>
+        <div class="booking-step">
+          <div class="step-num">3</div>
+          <div class="step-label">Confirmation<br>email sent</div>
+        </div>
+        <div class="booking-step">
+          <div class="step-num">4</div>
+          <div class="step-label">Reminder<br>24h before</div>
+        </div>
+      </div>
+
+      <!-- TRUST ROW -->
+      <div class="booking-trust">
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M9 12l2 2 4-4M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg>
+          <strong>Confirmed</strong>
+          <span>Every appointment manually confirmed</span>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <strong>Warranty-Safe</strong>
+          <span>OEM parts, manufacturer standards</span>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong>Mon–Fri 9–6</strong>
+          <span>Flexible drop-off and pick-up</span>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <strong>Kept Updated</strong>
+          <span>Status updates throughout your service</span>
+        </div>
+      </div>
+
+      <!-- MAIN LAYOUT -->
+      <div class="booking-layout">
+
+        <!-- CALENDAR -->
+        <div class="booking-calendar-wrap">
+          <div class="loading-state" id="cal-loading">
+            <div class="loading-spinner"></div>
+            <span>Loading availability…</span>
+          </div>
+          <!-- HubSpot Meetings Embed -->
+          <!-- REPLACE: data-src with your real meetings link after HubSpot setup -->
+          <!-- Format: https://meetings.hubspot.com/YOUR-USERNAME?embed=true -->
+          <div class="meetings-iframe-container"
+               data-src="https://meetings.hubspot.com/XXXXXXXX?embed=true"
+               id="hs-meetings-embed">
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="booking-sidebar">
+
+          <!-- Location & hours -->
+          <div class="sidebar-card">
+            <h4>Visit Us</h4>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>9751 Delegates Drive, Suite 200<br>Orlando, FL 32837</span>
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Monday – Friday · 9AM – 6PM</span>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-cta">
+              <a href="tel:+14075125877" class="cta-call">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 11.9 19.79 19.79 0 0 1 1 3.26 2 2 0 0 1 2.96 1h3a2 2 0 0 1 2 1.72c.127.96.362 1.904.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.99 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (407) 512-5877
+              </a>
+              <a href="https://maps.google.com/?q=9751+Delegates+Drive+Suite+200+Orlando+FL+32837" target="_blank" rel="noopener" class="cta-directions">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Services we handle -->
+          <div class="sidebar-card">
+            <h4>Services Available</h4>
+            <div class="service-tags">
+              <span class="service-tag">Scheduled Maintenance</span>
+              <span class="service-tag">Diagnostics</span>
+              <span class="service-tag">Engine Repair</span>
+              <span class="service-tag">Brake Systems</span>
+              <span class="service-tag">Suspension</span>
+              <span class="service-tag">Wheel Alignment</span>
+              <span class="service-tag">Programming & Coding</span>
+              <span class="service-tag">Performance / Tuning</span>
+            </div>
+            <div class="sidebar-divider"></div>
+            <p style="font-size:0.84rem;color:var(--graphite);margin:0;line-height:1.6;">Not sure what you need? Describe your symptoms in the notes field — our technician will review before your visit.</p>
+          </div>
+
+          <!-- Brands -->
+          <div class="sidebar-card">
+            <h4>European Brands We Service</h4>
+            <div class="service-tags">
+              <span class="service-tag">Porsche</span>
+              <span class="service-tag">BMW</span>
+              <span class="service-tag">Mercedes-Benz</span>
+              <span class="service-tag">Audi</span>
+              <span class="service-tag">Volkswagen</span>
+              <span class="service-tag">Mini</span>
+              <span class="service-tag">Land Rover</span>
+              <span class="service-tag">Volvo</span>
+            </div>
+          </div>
+
+          <!-- What happens next -->
+          <div class="sidebar-card">
+            <h4>What Happens Next</h4>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Confirmation email sent immediately</span>
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 11.9 19.79 19.79 0 0 1 1 3.26 2 2 0 0 1 2.96 1h3a2 2 0 0 1 2 1.72c.127.96.362 1.904.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.99 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Reminder call or text 24h before</span>
+            </div>
+            <div class="sidebar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M9 12l2 2 4-4M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg>
+              <span>Post-service follow-up & review request</span>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html"><img src="assets/logo-real.png" alt="EuroCraft Automotive" class="brand-logo" width="169" height="80" loading="lazy"></a>
+      <p>European auto repair and performance, built around precision, transparency, and dealership-level capability — without dealership limits.</p>
+      <div class="socials" style="margin-top: 1.4rem;">
+        <a href="https://www.facebook.com/eurocraftautomotivefl" target="_blank" rel="noopener" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396z"/></svg></a>
+        <a href="https://www.instagram.com/eurocraftautomotive" target="_blank" rel="noopener" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#maintenance">Maintenance</a></li><li><a href="services.html#diagnostics">Diagnostics</a></li><li><a href="services.html#programming">Programming</a></li><li><a href="services.html#tuning">Performance</a></li></ul></div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+14075125877">(407) 512-5877</a></li>
+        <li><a href="mailto:service@eurocraftautomotive.com">service@eurocraftautomotive.com</a></li>
+        <li style="color:var(--graphite)">Mon–Fri · 9AM–6PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 EuroCraft Automotive. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<!-- HubSpot Meetings Embed Script -->
+<script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+
+<!-- HubSpot Forms -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+<script>
+  // Hide loading spinner once iframe loads
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.meetingBookSucceeded) {
+      // Meeting booked — update steps UI
+      document.querySelectorAll('.booking-step').forEach(function(s, i) {
+        s.classList.remove('active');
+        if (i < 3) s.classList.add('done');
+        if (i === 3) s.classList.add('active');
+      });
+    }
+  });
+
+  // Hide loading spinner after embed renders
+  var calLoading = document.getElementById('cal-loading');
+  var observer = new MutationObserver(function() {
+    var iframe = document.querySelector('.meetings-iframe-container iframe');
+    if (iframe) {
+      calLoading.style.display = 'none';
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.getElementById('hs-meetings-embed'), { childList: true, subtree: true });
+
+  // Safety fallback — hide spinner after 4s regardless
+  setTimeout(function() {
+    if (calLoading) calLoading.style.display = 'none';
+  }, 4000);
+</script>
+
+</body>
+</html>
