@@ -113,6 +113,8 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
+  <!-- HubSpot Tracking -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/XXXXXXXX.js"></script>
 </head>
 <body>
 
@@ -226,45 +228,27 @@
       </div>
 
       <!-- FORM -->
-      <form class="form reveal" id="contact-form" action="https://formspree.io/f/eurocraftauto" method="POST">
-        <!-- Formspree config -->
-        <input type="hidden" name="_subject" value="New service inquiry — EuroCraft Automotive">
-        <input type="hidden" name="_replyto" value="">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="hs-form-wrapper reveal" id="hs-contact-form">
         <h3 class="display-3 mb-2">Send a message</h3>
-        <p style="color: var(--graphite); margin-bottom: 0.6rem; font-size: 0.96rem;">We'll respond within one business day.</p>
-
-        <div class="form-row">
-          <div class="field"><label>First Name</label><input type="text" name="first" required></div>
-          <div class="field"><label>Last Name</label><input type="text" name="last" required></div>
-        </div>
-        <div class="form-row">
-          <div class="field"><label>Email</label><input type="email" name="email" required></div>
-          <div class="field"><label>Phone</label><input type="tel" name="phone"></div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label>Vehicle</label>
-            <input type="text" name="vehicle" placeholder="e.g. 2022 Porsche 911 GT3">
-          </div>
-          <div class="field">
-            <label>Service Type</label>
-            <select name="service">
-              <option>Schedule a Service Appointment</option>
-              <option>Request a Repair Estimate</option>
-              <option>Diagnostic / Full Scan</option>
-              <option>Programming & Coding</option>
-              <option>Performance / Tuning</option>
-              <option>Parts Availability</option>
-              <option>Warranty / Coverage Question</option>
-              <option>General Inquiry</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label>What's Going On?</label><textarea name="message" placeholder="Tell us about your vehicle, the symptoms, or what you're looking to have done." required></textarea></div>
-
-        <button type="submit" class="btn btn-primary" data-magnetic><span>Send Message <span class="arrow">→</span></span></button>
-      </form>
+        <p style="color: var(--graphite); margin-bottom: 1.6rem; font-size: 0.96rem;">We'll respond within one business day.</p>
+        <div id="hubspot-contact-form"></div>
+      </div>
+      <script>
+        window.addEventListener('DOMContentLoaded', function() {
+          if (window.hbspt) {
+            hbspt.forms.create({
+              region: "na1",
+              portalId: "XXXXXXXX",
+              formId: "FORM_ID_CONTACT",
+              target: "#hubspot-contact-form",
+              onFormSubmitted: function() {
+                document.getElementById("hs-contact-form").innerHTML =
+                  "<div class=\"form-success\"><svg width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"var(--red)\" stroke-width=\"2\"><path d=\"M9 12l2 2 4-4M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z\"/></svg><h3>Message Received</h3><p>We\'ll get back to you within one business day.</p></div>";
+              }
+            });
+          }
+        });
+      </script>
     </div>
 
     <!-- MAP -->
@@ -349,5 +333,7 @@
 
 <script src="js/main.js"></script>
   <script src="js/app.js" defer></script>
+  <!-- HubSpot Forms -->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 </body>
 </html>

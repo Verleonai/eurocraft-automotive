@@ -2897,3 +2897,104 @@ html, body, *, *::before, *::after {
 [data-theme="light"] .brand-logo { filter: brightness(0); }
 [data-theme="light"] .nav-links a { color: var(--ink); }
 [data-theme="light"] .nav-links a:hover, [data-theme="light"] .nav-links a.active { color: var(--red); }
+
+/* ============================================================
+   HUBSPOT FORM INTEGRATION
+   ============================================================ */
+
+/* Inquiry section layout */
+.hs-inquiry-section { background: var(--base); border-top: 1px solid rgba(255,255,255,0.06); }
+.hs-inquiry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.hs-contact-bullets { display: flex; flex-direction: column; gap: 0.8rem; }
+.hs-bullet { display: flex; align-items: center; gap: 0.7rem; color: var(--ink); font-size: 0.95rem; }
+
+/* HubSpot form container */
+.hs-form-container {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 2.4rem;
+}
+.hs-form-wrapper {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 2.4rem;
+}
+
+/* Override HubSpot default styles to match dark theme */
+.hs-form-wrapper .hs-form fieldset,
+.hs-form-container .hs-form fieldset { max-width: 100% !important; }
+
+.hs-form-wrapper .hs-form .hs-input,
+.hs-form-container .hs-form .hs-input,
+.hs-form-wrapper .hs-form select,
+.hs-form-container .hs-form select {
+  width: 100% !important;
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 6px !important;
+  color: var(--ivory) !important;
+  padding: 0.72rem 1rem !important;
+  font-family: inherit !important;
+  font-size: 0.95rem !important;
+  transition: border-color 0.2s !important;
+}
+.hs-form-wrapper .hs-form .hs-input:focus,
+.hs-form-container .hs-form .hs-input:focus {
+  border-color: var(--red) !important;
+  outline: none !important;
+}
+.hs-form-wrapper .hs-form label,
+.hs-form-container .hs-form label {
+  color: var(--graphite) !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.4rem !important;
+  display: block !important;
+}
+.hs-form-wrapper .hs-form .hs-button,
+.hs-form-container .hs-form .hs-button {
+  background: var(--red) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 0.85rem 2rem !important;
+  font-family: inherit !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s !important;
+  width: 100% !important;
+  margin-top: 0.5rem !important;
+}
+.hs-form-wrapper .hs-form .hs-button:hover,
+.hs-form-container .hs-form .hs-button:hover { opacity: 0.88 !important; }
+.hs-form-wrapper .hs-form .hs-error-msgs,
+.hs-form-container .hs-form .hs-error-msgs { color: var(--red) !important; font-size: 0.82rem !important; margin-top: 0.3rem !important; list-style: none !important; padding: 0 !important; }
+.hs-form-wrapper .hs-form .hs-richtext,
+.hs-form-container .hs-form .hs-richtext { display: none !important; }
+
+/* Success state */
+.form-success {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 3rem 2rem; gap: 1rem;
+  min-height: 200px;
+}
+.form-success h3 { color: var(--ivory); font-size: 1.4rem; margin: 0; }
+.form-success p { color: var(--graphite); margin: 0; }
+
+/* Dark theme override */
+[data-theme="dark"] .hs-form-container,
+[data-theme="dark"] .hs-form-wrapper {
+  background: rgba(0,0,0,0.2);
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hs-inquiry-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hs-form-container, .hs-form-wrapper { padding: 1.6rem; }
+}
