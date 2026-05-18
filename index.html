@@ -563,56 +563,28 @@
       <div class="reveal" style="display:flex;flex-direction:column;gap:1.2rem;">
         <p class="lead">We earn loyalty one car at a time — and our customers tell us why.</p>
         <div class="rating-badge">
-          <div class="rating-badge-score">4.9</div>
+          <div class="rating-badge-score" data-google-rating-score>4.8</div>
           <div class="rating-badge-right">
             <div class="rating-badge-stars">★★★★★</div>
-            <div class="rating-badge-label">Based on Google Reviews</div>
-            <a href="https://maps.google.com/?q=EuroCraft+Automotive+Orlando+FL" target="_blank" rel="noopener" class="rating-badge-link">Read reviews →</a>
+            <div class="rating-badge-label" data-google-rating-count>Based on Google Reviews</div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=EuroCraft+Automotive+Orlando+FL" target="_blank" rel="noopener" class="rating-badge-link" data-google-rating-link>Read reviews →</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="testimonials-track">
-    <div class="testimonial">
+  <div class="testimonials-track" data-google-reviews-track>
+    <!-- Default fallback CTA. Replaced at runtime with real Google reviews by js/google-reviews.js
+         when the Places API key is configured. If the key is missing or the call fails, this stays. -->
+    <div class="testimonial testimonial-fallback">
       <div class="stars">★★★★★</div>
-      <blockquote>"Took my 911 here after a frustrating dealership visit. They found the issue in 20 minutes, fixed it for a fraction of what I was quoted, and explained everything clearly. New shop for life."</blockquote>
-      <div class="author">
-        <div class="avatar">D</div>
-        <div class="author-info"><strong>David R.</strong><span>Porsche 911 Owner</span></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Programming work on my F90 M5 that no other shop in Orlando would touch. Done in a single appointment. The car drives like new."</blockquote>
-      <div class="author">
-        <div class="avatar">M</div>
-        <div class="author-info"><strong>Marcus T.</strong><span>BMW M5 Competition</span></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="stars">★★★★★</div>
-      <blockquote>"I bring my Sprinter here for everything. DEF, emissions, diagnostics — they handle it all and they don't try to upsell me. Real professionals."</blockquote>
-      <div class="author">
-        <div class="avatar">L</div>
-        <div class="author-info"><strong>Lena K.</strong><span>Mercedes Sprinter Fleet</span></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Honest pricing, factory-quality work, and they actually answer the phone. That's rare in this industry. My Audi RS6 is in their hands every time."</blockquote>
-      <div class="author">
-        <div class="avatar">J</div>
-        <div class="author-info"><strong>Julian S.</strong><span>Audi RS6</span></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Stage 2 tune on my Golf R was perfect — smooth, reliable, no check-engine drama. They actually know what they're doing with VAG cars."</blockquote>
-      <div class="author">
-        <div class="avatar">A</div>
-        <div class="author-info"><strong>Andre P.</strong><span>VW Golf R</span></div>
+      <blockquote>"Read verified Google reviews from European car owners across Orlando — Porsche, BMW, Mercedes, Audi, and VW."</blockquote>
+      <div class="author" style="display:flex;align-items:center;gap:1rem;">
+        <div class="avatar" aria-hidden="true">G</div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=EuroCraft+Automotive+Orlando+FL" target="_blank" rel="noopener" data-magnetic>
+          <span>See Google Reviews <span class="arrow">→</span></span>
+        </a>
       </div>
     </div>
   </div>
@@ -726,6 +698,10 @@
 
 <script src="js/main.js"></script>
   <script src="js/app.js" defer></script>
+  <!-- Google Maps Platform: config + loader + reviews -->
+  <script src="js/google-config.js"></script>
+  <script src="js/google-loader.js"></script>
+  <script src="js/google-reviews.js" defer></script>
   <!-- HubSpot Forms -->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 </body>

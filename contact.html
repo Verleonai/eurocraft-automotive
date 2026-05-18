@@ -277,13 +277,7 @@
           </a>
         </div>
         <div class="map-static-visual">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-81.41%2C28.41%2C-81.38%2C28.435&amp;layer=mapnik&amp;marker=28.4214%2C-81.3977"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-            title="EuroCraft Automotive on map">
-          </iframe>
+          <div data-google-map class="ec-google-map" aria-label="EuroCraft Automotive location map"></div>
           <div class="map-static-visual-fallback">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <span>9751 Delegates Dr, Orlando FL</span>
@@ -333,6 +327,10 @@
 
 <script src="js/main.js"></script>
   <script src="js/app.js" defer></script>
+  <!-- Google Maps Platform: config + loader + interactive map -->
+  <script src="js/google-config.js"></script>
+  <script src="js/google-loader.js"></script>
+  <script src="js/google-map.js" defer></script>
   <!-- HubSpot Forms -->
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 </body>
